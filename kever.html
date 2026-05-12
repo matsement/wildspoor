@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kever gevonden! — Wildspoor</title>
+  <link rel="stylesheet" href="css/style.css">
+<script src="js/app.js"></script>
+  <style>
+    .insect-hero {
+      min-height: 100vh;
+      background: linear-gradient(160deg, #1a2a0a 0%, #2e4a18 50%, #3d5a20 100%);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 6rem 1.5rem 4rem;
+      text-align: center;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+    .insect-hero::before {
+      content:'';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 30% 80%, rgba(90,112,64,0.25), transparent),
+        radial-gradient(ellipse 40% 40% at 70% 20%, rgba(168,192,112,0.1), transparent);
+    }
+    .insect-hero h1 { color: white; margin: 1rem 0 0.5rem; position: relative; }
+    .insect-hero p { color: rgba(255,255,255,0.75); position: relative; }
+
+    .info-section {
+      padding: 4rem 1.5rem;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .location-callout {
+      background: linear-gradient(135deg, var(--bark), var(--moss));
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 2rem;
+      color: white;
+      display: flex; align-items: center; gap: 1.5rem;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+    }
+    .location-callout-icon { font-size: 3rem; flex-shrink: 0; }
+    .location-callout h3 { color: var(--lichen); margin-bottom: 0.3rem; }
+    .location-callout p { color: rgba(255,255,255,0.75); font-size: 0.9rem; }
+
+    /* seasonal hint */
+    .seasonal-note {
+      background: var(--dew);
+      border-left: 4px solid var(--leaf);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 1rem 1.25rem;
+      margin-bottom: 2rem;
+      font-size: 0.9rem;
+      color: var(--text-mid);
+    }
+    .seasonal-note strong { color: var(--moss); }
+
+    .fact-chips {
+      display: flex; flex-wrap: wrap; gap: 0.5rem;
+      margin-bottom: 2rem;
+    }
+
+    /* did you know */
+    .did-you-know {
+      background: var(--soil);
+      color: var(--cream);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin: 2rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .did-you-know::before {
+      content: '"';
+      position: absolute;
+      font-family: var(--font-display);
+      font-size: 12rem;
+      color: rgba(255,255,255,0.04);
+      top: -2rem; left: 0.5rem;
+      line-height: 1;
+    }
+    .dyk-label {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--lichen);
+      margin-bottom: 0.75rem;
+    }
+    .did-you-know p { color: rgba(248,244,232,0.8); line-height: 1.75; }
+  </style>
+</head>
+<body>
+
+<!-- ══ PROTOTYPE BANNER ══════════════════════════════════ -->
+<div class="proto-banner">
+  <span data-lang="nl">⚠️ Deze pagina is een prototype en wordt getest. Geef gerust je <a href="https://matsvandeijck.com/kever/#feedback-english" target="_blank">feedback</a>.</span>
+  <span data-lang="en">⚠️ This page is a prototype and is being tested. Please share your <a href="https://matsvandeijck.com/kever/#feedback-english" target="_blank">feedback</a>.</span>
+</div>
+
+<!-- ══ HEADER ══════════════════════════════════════════ -->
+<header class="site-header">
+  <a href="index.html" class="logo-wrap">
+    <div class="logo-icon">🌿</div>
+    <span class="logo-name">Wild<span>spoor</span></span>
+  </a>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="index.html" data-lang="nl">Concept</a><a href="index.html" data-lang="en">Concept</a></li>
+      <li><a href="meedoen.html" data-lang="nl">Meedoen</a><a href="meedoen.html" data-lang="en">Join</a></li>
+    </ul>
+  </nav>
+  <button class="lang-toggle">EN</button>
+</header>
+
+<!-- ══ CELEBRATION HERO ═════════════════════════════════ -->
+<section class="insect-hero">
+  <div style="position:relative;z-index:1;width:100%;max-width:600px">
+    
+    <div class="found-badge">
+      <span>🎉</span>
+      <span data-lang="nl">Gevonden!</span>
+      <span data-lang="en">Found it!</span>
+    </div>
+
+    <div class="insect-hero-image">
+      <!-- Replace src with your 3D model render. Use a transparent PNG. -->
+      <img src="images/kever.png" alt="Kever" onerror="this.outerHTML='<div style=&quot;font-size:6rem&quot;>🪲</div>'">
+    </div>
+
+    <h1 class="celebration-title">
+      <span data-lang="nl">Je hebt de kever gevonden!</span>
+      <span data-lang="en">You found the beetle!</span>
+    </h1>
+    <p class="celebration-sub">
+      <span data-lang="nl">Gefeliciteerd — je bent nu officieel een stadsnaturalist.</span>
+      <span data-lang="en">Congratulations — you're now officially an urban naturalist.</span>
+    </p>
+
+    <div class="location-chip">
+      📍 Spoorpark, Tilburg
+    </div>
+
+  </div>
+</section>
+
+<div class="vine-divider"></div>
+
+<!-- ══ WHERE & WHY ══════════════════════════════════════ -->
+<section class="info-section">
+
+  <!-- Location callout -->
+  <div class="location-callout">
+    <div class="location-callout-icon">🪵</div>
+    <div>
+      <h3 data-lang="nl">Bij de dode eikenstam</h3>
+      <h3 data-lang="en">By the dead oak trunk</h3>
+      <p data-lang="nl">Je vond deze kever in of nabij de liggende dode eikenstam in het noorden van het Spoorpark. Dat is precies zijn thuis.</p>
+      <p data-lang="en">You found this beetle in or near the fallen dead oak trunk in the northern part of Spoorpark. That's exactly where it lives.</p>
+    </div>
+  </div>
+
+  <!-- Seasonal note — UPDATE THIS PER SEASON -->
+  <div class="seasonal-note">
+    <span class="season-badge season-lente">🌸 Lente / Spring</span><br>
+    <strong data-lang="nl">Lente-update:</strong>
+    <strong data-lang="en">Spring update:</strong>
+    <span data-lang="nl"> Nu de temperaturen stijgen, zijn kevers extra actief. De larven beginnen te bewegen in de binnenkant van de stam. Let ook op de schimmelpatronen op het hout — die zijn hun voedsel.</span>
+    <span data-lang="en"> As temperatures rise, beetles are especially active. Larvae are starting to move inside the trunk. Look for the fungal patterns on the wood — that's their food.</span>
+  </div>
+
+  <div class="fact-chips">
+    <span class="tag">🪲 Coleoptera</span>
+    <span class="tag">🌳 Saproxylobionten</span>
+    <span class="tag">♻️ Afbraak</span>
+    <span class="tag">🍄 Schimmels</span>
+    <span class="tag">📏 5–30mm</span>
+  </div>
+
+  <!-- Interactive accordion -->
+  <span class="eyebrow" data-lang="nl">Klik en ontdek</span>
+  <span class="eyebrow" data-lang="en">Click and discover</span>
+  <h2 data-lang="nl" style="margin-bottom:1.5rem">Waarom is deze plek zo bijzonder?</h2>
+  <h2 data-lang="en" style="margin-bottom:1.5rem">Why is this place so special?</h2>
+
+  <div class="accordion-item open">
+    <button class="accordion-trigger">
+      <div class="accordion-icon">🪵</div>
+      <div>
+        <div data-lang="nl"><strong>De dode boom als paleis</strong></div>
+        <div data-lang="en"><strong>The dead tree as a palace</strong></div>
+        <div style="font-size:0.82rem;color:var(--text-soft)" data-lang="nl">Waarom trekt de kever juist hier naartoe?</div>
+        <div style="font-size:0.82rem;color:var(--text-soft)" data-lang="en">Why does the beetle come to this exact spot?</div>
+      </div>
+      <span class="accordion-arrow">▼</span>
+    </button>
+    <div class="accordion-body">
+      <p data-lang="nl">Een dode of stervende boom is geen einde — het is een begin. Voor kevers zoals deze is de zachte, rottende schors het ideale broedplaats. De larven graven gangen in het hout en eten schimmeldraden. Soms leven ze hier 3 tot 5 jaar voor ze als volwassen kever verschijnen.</p>
+      <p data-lang="en">A dead or dying tree is not an ending — it's a beginning. For beetles like this one, the soft, rotting bark is the perfect breeding ground. The larvae dig tunnels through the wood and feed on fungal threads. Sometimes they live here for 3 to 5 years before emerging as an adult beetle.</p>
+      <p data-lang="nl">Deze stam in het Spoorpark is al meer dan twee jaar aan het afbreken, en elke fase trekt weer andere soorten aan.</p>
+      <p data-lang="en">This trunk in Spoorpark has been decomposing for over two years, and each phase attracts different species.</p>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <button class="accordion-trigger">
+      <div class="accordion-icon">🌍</div>
+      <div>
+        <div data-lang="nl"><strong>Wat doet dit voor de biodiversiteit?</strong></div>
+        <div data-lang="en"><strong>What does this do for biodiversity?</strong></div>
+        <div style="font-size:0.82rem;color:var(--text-soft)" data-lang="nl">Eén stam, honderden soorten</div>
+        <div style="font-size:0.82rem;color:var(--text-soft)" data-lang="en">One trunk, hundreds of species</div>
+      </div>
+      <span class="accordion-arrow">▼</span>
+    </button>
+    <div class="accordion-body">
+      <p data-lang="nl">Een enkel stuk dood hout kan het leefgebied zijn van meer dan 1.000 verschillende soorten: kevers, schimmels, mossen, vogels die er in prikken, vleermuizen die erin slapen. De kever speelt hierin een sleutelrol: zijn gangen ventileren het hout en maken ruimte voor anderen.</p>
+      <p data-lang="en">A single piece of dead wood can be the habitat of more than 1,000 different species: beetles, fungi, mosses, birds that peck at it, bats that sleep inside. The beetle plays a key role: its tunnels ventilate the wood and make space for others.</p>
+      <p data-lang="nl">In Nederland zijn meer dan 1.500 soorten kevers afhankelijk van dood hout. Veel van hen staan op de rode lijst van bedreigde soorten — precies omdat we zo weinig dode bomen laten staan.</p>
+      <p data-lang="en">In the Netherlands, more than 1,500 beetle species depend on dead wood. Many are on the red list of endangered species — precisely because we remove so few dead trees.</p>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <button class="accordion-trigger">
+      <div class="accordion-icon">🙅</div>
+      <div>
+        <div data-lang="nl"><strong>Waarom is opruimen geen goed idee?</strong></div>
+        <div data-lang="en"><strong>Why is clearing it away a bad idea?</strong></div>
+        <div style="font-size:0.82rem;color:var(--text-soft)" data-lang="nl">Laat het liggen. Serieus.</div>
+        <div style="font-size:0.82rem;color:var(--text-soft)" data-lang="en">Leave it. Seriously.</div>
+      </div>
+      <span class="accordion-arrow">▼</span>
+    </button>
+    <div class="accordion-body">
+      <p data-lang="nl">Stadsbeheerders ruimen dode bomen vaak op om veiligheidsredenen of omdat het er "slordig" uitziet. Maar elke keer dat zo'n stam wordt afgevoerd, verdwijnt een compleet ecosysteem. Het Spoorpark kiest bewust voor een andere aanpak: laten liggen, en vertrouwen op de natuur.</p>
+      <p data-lang="en">City managers often remove dead trees for safety reasons or because they look "messy." But every time such a trunk is removed, an entire ecosystem disappears. Spoorpark deliberately chooses a different approach: leave it, and trust nature.</p>
+      <p data-lang="nl">Het dode hout breekt af tot humus, voeder planten, houdt water vast en koelt de bodem. Het is een gratis, zelfonderhoudend systeem.</p>
+      <p data-lang="en">Dead wood breaks down into humus, feeds plants, retains water, and cools the soil. It's a free, self-maintaining system.</p>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <button class="accordion-trigger">
+      <div class="accordion-icon">🔬</div>
+      <div>
+        <div data-lang="nl"><strong>Welke kever is dit precies?</strong></div>
+        <div data-lang="en"><strong>What beetle is this exactly?</strong></div>
+        <div style="font-size:0.82rem;color:var(--text-soft)" data-lang="nl">Soort, uiterlijk, gewoonten</div>
+        <div style="font-size:0.82rem;color:var(--text-soft)" data-lang="en">Species, appearance, habits</div>
+      </div>
+      <span class="accordion-arrow">▼</span>
+    </button>
+    <div class="accordion-body">
+      <p data-lang="nl">De kever die je hier kunt aantreffen is een saproxyle kever — een kever die afhankelijk is van dood of stervend hout. In het Spoorpark zijn dit vaak soorten uit de familie van de boktorren (Cerambycidae) of de koperkever (Buprestidae). Ze zijn herkenbaar aan hun langwerpige lichaam en lange antennes.</p>
+      <p data-lang="en">The beetle you can find here is a saproxylic beetle — a beetle that depends on dead or dying wood. In Spoorpark, these are often species from the longhorn beetle family (Cerambycidae) or jewel beetles (Buprestidae). They're recognisable by their elongated body and long antennae.</p>
+      <p data-lang="nl">Ze zijn actief van april tot augustus, en het meest zichtbaar op warme, zonnige dagen.</p>
+      <p data-lang="en">They're active from April to August, and most visible on warm, sunny days.</p>
+    </div>
+  </div>
+
+  <!-- Did you know -->
+  <div class="did-you-know mt-4">
+    <div class="dyk-label" data-lang="nl">Wist je dat...</div>
+    <div class="dyk-label" data-lang="en">Did you know...</div>
+    <p data-lang="nl">Een vierkante meter dood hout kan het leven herbergen van meer levende organismen dan een vierkante meter tropisch regenwoud? Dood hout is het rijkste habitat op aarde — en in onze steden verdwijnt het bijna volledig.</p>
+    <p data-lang="en">One square metre of dead wood can harbour more living organisms than one square metre of tropical rainforest? Dead wood is the richest habitat on earth — and in our cities, it is almost completely disappearing.</p>
+  </div>
+
+  <!-- Photo grid -->
+  <h3 class="mt-4 mb-2" data-lang="nl">Foto's van de plek</h3>
+  <h3 class="mt-4 mb-2" data-lang="en">Photos of the spot</h3>
+  <div class="photo-grid">
+    <div class="photo-slot">
+      <div class="photo-placeholder"><span>🪵</span><span data-lang="nl">foto binnenkort</span><span data-lang="en">photo coming</span></div>
+    </div>
+    <div class="photo-slot">
+      <div class="photo-placeholder"><span>🌿</span><span data-lang="nl">foto binnenkort</span><span data-lang="en">photo coming</span></div>
+    </div>
+    <div class="photo-slot">
+      <div class="photo-placeholder"><span>🍄</span><span data-lang="nl">foto binnenkort</span><span data-lang="en">photo coming</span></div>
+    </div>
+  </div>
+  <p style="font-size:0.8rem;color:var(--text-soft);margin-top:0.5rem;font-family:var(--font-mono)" data-lang="nl">📸 Foto's worden regelmatig bijgewerkt per seizoen.</p>
+  <p style="font-size:0.8rem;color:var(--text-soft);margin-top:0.5rem;font-family:var(--font-mono)" data-lang="en">📸 Photos are updated regularly each season.</p>
+
+</section>
+
+<div class="vine-divider"></div>
+
+<!-- ══ SIGHTINGS COUNTER ═════════════════════════════════ -->
+<section class="section">
+  <span class="eyebrow" data-lang="nl">Buurtregistratie</span>
+  <span class="eyebrow" data-lang="en">Neighbourhood sightings</span>
+  <h2 data-lang="nl">Hoe veel kevers zijn er al gezien?</h2>
+  <h2 data-lang="en">How many beetles have been spotted?</h2>
+  <div class="divider"></div>
+
+  <div class="sightings-block mt-4">
+    <div class="sightings-number" id="total-sightings">47</div>
+    <div class="sightings-label" data-lang="nl">Keer waargenomen door buurters</div>
+    <div class="sightings-label" data-lang="en">Times spotted by neighbours</div>
+    <div class="sightings-subtext" data-lang="nl">Jij bent de <strong id="my-sighting-count" style="color:var(--lichen)">0</strong>e keer dat jij er eentje hebt gezien.</div>
+    <div class="sightings-subtext" data-lang="en">You've personally spotted <strong id="my-sighting-count-en" style="color:var(--lichen)">0</strong> time(s).</div>
+
+    <div style="position:relative;z-index:1">
+      <p style="color:rgba(248,244,232,0.55);font-size:0.82rem;margin:1.25rem 0 0.5rem" data-lang="nl">Heb je er vandaag ook een gezien? Voeg je waarneming toe:</p>
+      <p style="color:rgba(248,244,232,0.55);font-size:0.82rem;margin:1.25rem 0 0.5rem" data-lang="en">Did you spot one today? Add your sighting:</p>
+      <div class="counter-input-wrap">
+        <button class="counter-btn" id="counter-minus">−</button>
+        <input class="counter-input" id="counter-input" type="number" value="1" min="0" max="99">
+        <button class="counter-btn" id="counter-plus">+</button>
+        <button class="counter-submit" id="counter-submit" data-lang="nl">Toevoegen</button>
+        <button class="counter-submit" id="counter-submit-en" data-lang="en" style="display:none">Add</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Upload -->
+  <h3 class="mt-4 mb-2" data-lang="nl">📷 Deel jouw foto</h3>
+  <h3 class="mt-4 mb-2" data-lang="en">📷 Share your photo</h3>
+  <p style="color:var(--text-mid);margin-bottom:1rem;font-size:0.9rem" data-lang="nl">Heb je een foto gemaakt? Voeg hem hieronder toe. Jij bouwt mee aan het archief van het Spoorpark.</p>
+  <p style="color:var(--text-mid);margin-bottom:1rem;font-size:0.9rem" data-lang="en">Did you take a photo? Add it below. You're helping build the Spoorpark archive.</p>
+  <div class="upload-area" id="upload-area">
+    <input type="file" id="photo-input" accept="image/*" multiple>
+    <div class="upload-icon">🌿</div>
+    <div class="upload-text" data-lang="nl"><strong>Klik of sleep</strong> je foto hierheen</div>
+    <div class="upload-text" data-lang="en"><strong>Click or drag</strong> your photo here</div>
+    <div style="font-size:0.78rem;color:var(--text-soft);margin-top:0.4rem;font-family:var(--font-mono)" data-lang="nl">JPG, PNG, HEIC — max 10MB</div>
+    <div style="font-size:0.78rem;color:var(--text-soft);margin-top:0.4rem;font-family:var(--font-mono)" data-lang="en">JPG, PNG, HEIC — max 10MB</div>
+  </div>
+  <div class="uploaded-preview" id="upload-preview"></div>
+</section>
+
+<div class="vine-divider"></div>
+
+<!-- ══ INSECT TRACKER ════════════════════════════════════ -->
+<section class="tracker-section">
+  <span class="eyebrow" data-lang="nl">Jouw speurtocht</span>
+  <span class="eyebrow" data-lang="en">Your search</span>
+  <h2 class="tracker-title" data-lang="nl">Hoe ver ben jij?</h2>
+  <h2 class="tracker-title" data-lang="en">How far are you?</h2>
+  <p class="tracker-subtitle" id="tracker-progress-text" data-lang="nl">Je hebt 1 van de 3 gevonden. Nog 2 te gaan!</p>
+
+  <div class="found-progress-wrap">
+    <div class="found-progress-bar" id="found-progress-bar" style="width:0%"></div>
+  </div>
+
+  <div class="insect-cards-row mt-4" id="insect-tracker">
+    <!-- rendered by JS -->
+  </div>
+</section>
+
+<!-- ══ FEEDBACK (floating + end) ════════════════════════ -->
+<div class="feedback-float" id="feedback-float">
+  <button class="feedback-float-close" id="feedback-float-close">✕</button>
+  <div class="feedback-float-title" data-lang="nl">💬 Wat vind je ervan?</div>
+  <div class="feedback-float-title" data-lang="en">💬 What do you think?</div>
+  <p style="font-size:0.82rem;color:rgba(255,255,255,0.75);margin:0.4rem 0" data-lang="nl">Dit is een prototype. Je feedback helpt enorm!</p>
+  <p style="font-size:0.82rem;color:rgba(255,255,255,0.75);margin:0.4rem 0" data-lang="en">This is a prototype. Your feedback really helps!</p>
+  <a href="#feedback" onclick="document.getElementById('feedback-float').classList.remove('visible')" data-lang="nl">Geef feedback →</a>
+  <a href="#feedback" onclick="document.getElementById('feedback-float').classList.remove('visible')" data-lang="en">Give feedback →</a>
+</div>
+
+<section class="feedback-section" id="feedback">
+  <div class="feedback-inner">
+    <span class="eyebrow" style="color:var(--leaf)" data-lang="nl">Jij maakt dit beter</span>
+    <span class="eyebrow" style="color:var(--leaf)" data-lang="en">You make this better</span>
+    <h2 style="color:var(--lichen)" data-lang="nl">Wat vond je van de kever-pagina?</h2>
+    <h2 style="color:var(--lichen)" data-lang="en">What did you think of the beetle page?</h2>
+    <p style="color:rgba(248,244,232,0.65);margin-top:0.5rem" data-lang="nl">Dit project is in ontwikkeling. Jouw mening helpt ons het beter te maken voor alle buurtbewoners.</p>
+    <p style="color:rgba(248,244,232,0.65);margin-top:0.5rem" data-lang="en">This project is in development. Your opinion helps us improve it for all residents.</p>
+    <div class="feedback-iframe-wrap">
+      <!-- Replace this URL with your own MS Forms link -->
+      <iframe src="https://matsvandeijck.com/kever/#feedback-english" title="Feedback formulier"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ═══════════════════════════════════════════ -->
+<footer class="site-footer">
+  <p>Wildspoor · Spoorpark Tilburg · <a href="index.html" data-lang="nl">Terug naar concept</a><a href="index.html" data-lang="en">Back to concept</a> · <a href="meedoen.html" data-lang="nl">Meedoen</a><a href="meedoen.html" data-lang="en">Join</a></p>
+</footer>
+
+<script src="js/app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    initInsectPage('kever');
+    initCounter('kever');
+    // Sync the EN my-count display too
+    const myCountEn = document.getElementById('my-sighting-count-en');
+    if (myCountEn) {
+      const MY_COUNT_KEY = 'wildspoor_mycount_kever';
+      myCountEn.textContent = localStorage.getItem(MY_COUNT_KEY) || '0';
+    }
+  });
+</script>
+</body>
+</html>
