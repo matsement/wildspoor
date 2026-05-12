@@ -1,0 +1,679 @@
+:root{
+  --bg:#f5f1e8;
+  --cream:#f8f4e8;
+  --soil:#1c1a16;
+  --bark:#3f3328;
+  --moss:#566b2f;
+  --leaf:#7f9b45;
+  --lichen:#c6db84;
+  --morning:#dce7b8;
+  --dew:#edf3dc;
+
+  --text:#1d1d1d;
+  --text-mid:#5b5b5b;
+  --text-soft:#7c7c7c;
+
+  --radius-lg:28px;
+  --radius-md:18px;
+  --radius-sm:12px;
+
+  --shadow:
+    0 10px 30px rgba(0,0,0,0.08);
+
+  --font-display:
+    "Inter",
+    sans-serif;
+
+  --font-mono:
+    "IBM Plex Mono",
+    monospace;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Inter,sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(126,155,69,0.08), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(86,107,47,0.08), transparent 30%),
+    var(--bg);
+  color:var(--text);
+  overflow-x:hidden;
+}
+
+/* moss texture overlay */
+
+body::before{
+  content:'';
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  opacity:0.06;
+  background-image:url("https://grainy-gradients.vercel.app/noise.svg");
+  mix-blend-mode:multiply;
+  z-index:9999;
+}
+
+/* typography */
+
+h1,h2,h3{
+  font-family:var(--font-display);
+  letter-spacing:-0.03em;
+  line-height:1.05;
+}
+
+h1{
+  font-size:clamp(3rem,7vw,6rem);
+}
+
+h2{
+  font-size:clamp(2rem,5vw,3.6rem);
+}
+
+p{
+  line-height:1.8;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+img{
+  max-width:100%;
+  display:block;
+}
+
+/* sections */
+
+.section{
+  padding:6rem 1.5rem;
+  max-width:1100px;
+  margin:auto;
+}
+
+.mt-4{
+  margin-top:4rem;
+}
+
+.mb-2{
+  margin-bottom:1rem;
+}
+
+/* header */
+
+.site-header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:1000;
+
+  backdrop-filter:blur(14px);
+  background:rgba(248,244,232,0.72);
+
+  border-bottom:1px solid rgba(0,0,0,0.05);
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  padding:1rem 1.5rem;
+}
+
+.logo-wrap{
+  display:flex;
+  align-items:center;
+  gap:0.7rem;
+}
+
+.logo-icon{
+  width:46px;
+  height:46px;
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--leaf),var(--moss));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:1.2rem;
+  color:white;
+  overflow:hidden;
+}
+
+/* replace later with img */
+
+.logo-name{
+  font-weight:800;
+  font-size:1.2rem;
+}
+
+.logo-name span{
+  color:var(--leaf);
+}
+
+.nav-links{
+  display:flex;
+  gap:1.5rem;
+  list-style:none;
+}
+
+.nav-links a{
+  font-size:0.95rem;
+  color:var(--text-mid);
+}
+
+.nav-links a:hover{
+  color:var(--moss);
+}
+
+.lang-toggle{
+  border:none;
+  background:var(--soil);
+  color:white;
+  border-radius:999px;
+  padding:0.7rem 1rem;
+  cursor:pointer;
+  font-weight:700;
+}
+
+/* prototype banner */
+
+.proto-banner{
+  background:var(--soil);
+  color:white;
+  text-align:center;
+  padding:0.7rem 1rem;
+  font-size:0.85rem;
+  position:relative;
+  z-index:1001;
+}
+
+.proto-banner a{
+  text-decoration:underline;
+}
+
+/* buttons */
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:0.5rem;
+
+  padding:1rem 1.4rem;
+  border-radius:999px;
+
+  transition:0.3s;
+  font-weight:700;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+.btn-primary{
+  background:var(--soil);
+  color:white;
+}
+
+.btn-outline{
+  border:1px solid rgba(0,0,0,0.12);
+}
+
+/* dividers */
+
+.vine-divider{
+  height:120px;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(127,155,69,0.15), transparent 70%);
+  position:relative;
+}
+
+.vine-divider::before{
+  content:'🌿';
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  font-size:2rem;
+  opacity:0.3;
+}
+
+/* celebration */
+
+.found-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:0.5rem;
+
+  background:var(--leaf);
+  color:white;
+
+  border-radius:999px;
+
+  padding:0.7rem 1rem;
+
+  font-weight:700;
+  margin-bottom:1.5rem;
+
+  animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-6px);}
+}
+
+.insect-hero-image{
+  width:min(380px,70vw);
+  aspect-ratio:1;
+
+  border-radius:50%;
+
+  margin:0 auto 2rem;
+
+  background:
+    radial-gradient(circle at top left, rgba(255,255,255,0.4), transparent),
+    linear-gradient(135deg,var(--morning),var(--leaf));
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  box-shadow:
+    0 0 0 20px rgba(255,255,255,0.05),
+    0 0 60px rgba(255,255,255,0.15);
+
+  animation:floaty 5s ease-in-out infinite;
+}
+
+.insect-hero-image img{
+  width:78%;
+  height:78%;
+  object-fit:contain;
+}
+
+@keyframes floaty{
+  0%,100%{transform:translateY(0px);}
+  50%{transform:translateY(-12px);}
+}
+
+.celebration-title{
+  margin-bottom:1rem;
+}
+
+.celebration-sub{
+  font-size:1.1rem;
+  max-width:640px;
+  margin:auto;
+}
+
+.location-chip{
+  display:inline-flex;
+  align-items:center;
+  gap:0.5rem;
+
+  margin-top:2rem;
+
+  background:white;
+  border-radius:999px;
+  padding:0.9rem 1.2rem;
+
+  font-weight:700;
+
+  border:1px solid rgba(0,0,0,0.08);
+}
+
+/* accordion */
+
+.accordion-item{
+  background:white;
+  border-radius:var(--radius-lg);
+  overflow:hidden;
+  margin-bottom:1rem;
+  box-shadow:var(--shadow);
+}
+
+.accordion-trigger{
+  width:100%;
+  border:none;
+  background:none;
+  padding:1.4rem;
+  display:flex;
+  align-items:center;
+  gap:1rem;
+  text-align:left;
+  cursor:pointer;
+}
+
+.accordion-icon{
+  width:54px;
+  height:54px;
+  border-radius:16px;
+  background:var(--dew);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:1.5rem;
+  flex-shrink:0;
+}
+
+.accordion-arrow{
+  margin-left:auto;
+  transition:0.3s;
+}
+
+.accordion-item.open .accordion-arrow{
+  transform:rotate(180deg);
+}
+
+.accordion-body{
+  display:none;
+  padding:0 1.4rem 1.4rem;
+}
+
+.accordion-item.open .accordion-body{
+  display:block;
+}
+
+/* sightings */
+
+.sightings-block{
+  background:
+    linear-gradient(135deg,var(--soil),#2a241d);
+
+  color:white;
+
+  padding:3rem;
+  border-radius:var(--radius-lg);
+
+  position:relative;
+  overflow:hidden;
+}
+
+.sightings-number{
+  font-size:5rem;
+  font-weight:900;
+  line-height:1;
+}
+
+.counter-input-wrap{
+  display:flex;
+  gap:0.5rem;
+  flex-wrap:wrap;
+  margin-top:1rem;
+}
+
+.counter-btn,
+.counter-submit{
+  border:none;
+  border-radius:999px;
+  cursor:pointer;
+}
+
+.counter-btn{
+  width:50px;
+  height:50px;
+  background:white;
+  font-size:1.4rem;
+}
+
+.counter-input{
+  width:80px;
+  border:none;
+  border-radius:999px;
+  text-align:center;
+  font-size:1.1rem;
+}
+
+.counter-submit{
+  background:var(--leaf);
+  color:white;
+  padding:0 1.5rem;
+  font-weight:700;
+}
+
+/* upload */
+
+.upload-area{
+  background:white;
+  border:2px dashed rgba(0,0,0,0.12);
+  border-radius:var(--radius-lg);
+  padding:3rem;
+  text-align:center;
+  position:relative;
+}
+
+.upload-area input{
+  position:absolute;
+  inset:0;
+  opacity:0;
+  cursor:pointer;
+}
+
+.upload-icon{
+  font-size:3rem;
+  margin-bottom:1rem;
+}
+
+.uploaded-preview{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:1rem;
+  margin-top:2rem;
+}
+
+.uploaded-preview img{
+  border-radius:20px;
+  aspect-ratio:1;
+  object-fit:cover;
+  box-shadow:var(--shadow);
+}
+
+/* tracker */
+
+.tracker-section{
+  padding:6rem 1.5rem;
+  text-align:center;
+}
+
+.found-progress-wrap{
+  width:min(500px,100%);
+  margin:2rem auto;
+  height:20px;
+  border-radius:999px;
+  background:rgba(0,0,0,0.08);
+  overflow:hidden;
+}
+
+.found-progress-bar{
+  height:100%;
+  background:linear-gradient(90deg,var(--leaf),var(--lichen));
+  border-radius:999px;
+  transition:1s;
+}
+
+.insect-cards-row{
+  display:flex;
+  gap:1rem;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+.insect-tracker-card{
+  width:220px;
+  border-radius:28px;
+  padding:1.5rem;
+  color:white;
+  position:relative;
+  overflow:hidden;
+  transition:0.3s;
+}
+
+.insect-tracker-card:hover{
+  transform:translateY(-6px);
+}
+
+.insect-tracker-card.locked{
+  opacity:0.35;
+  filter:grayscale(1);
+}
+
+.tracker-insect-img{
+  height:120px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.tracker-name{
+  font-weight:800;
+  margin-top:1rem;
+}
+
+.tracker-status{
+  opacity:0.8;
+  margin-top:0.4rem;
+  font-size:0.9rem;
+}
+
+/* floating feedback */
+
+.feedback-float{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  width:320px;
+
+  background:var(--soil);
+  color:white;
+
+  padding:1.4rem;
+  border-radius:28px;
+
+  z-index:1000;
+
+  box-shadow:
+    0 20px 40px rgba(0,0,0,0.25);
+
+  transform:translateY(140%);
+  transition:0.5s;
+}
+
+.feedback-float.visible{
+  transform:translateY(0);
+}
+
+.feedback-float a{
+  display:inline-block;
+  margin-top:1rem;
+  background:var(--leaf);
+  padding:0.8rem 1rem;
+  border-radius:999px;
+}
+
+.feedback-float-close{
+  position:absolute;
+  top:10px;
+  right:10px;
+  border:none;
+  background:none;
+  color:white;
+  cursor:pointer;
+}
+
+/* feedback section */
+
+.feedback-section{
+  background:var(--soil);
+  color:white;
+  padding:6rem 1.5rem;
+}
+
+.feedback-inner{
+  max-width:900px;
+  margin:auto;
+}
+
+.feedback-iframe-wrap{
+  margin-top:2rem;
+  overflow:hidden;
+  border-radius:28px;
+}
+
+.feedback-iframe-wrap iframe{
+  width:100%;
+  min-height:700px;
+  border:none;
+  background:white;
+}
+
+/* misc */
+
+.eyebrow{
+  display:block;
+  text-transform:uppercase;
+  letter-spacing:0.18em;
+  font-size:0.75rem;
+  font-family:var(--font-mono);
+  color:var(--leaf);
+  margin-bottom:1rem;
+}
+
+.divider{
+  width:80px;
+  height:4px;
+  border-radius:999px;
+  background:var(--leaf);
+  margin-top:1rem;
+}
+
+/* language */
+
+[data-lang="en"]{
+  display:none;
+}
+
+body.lang-en [data-lang="nl"]{
+  display:none !important;
+}
+
+body.lang-en [data-lang="en"]{
+  display:initial !important;
+}
+
+/* mobile */
+
+@media(max-width:760px){
+
+  .nav-links{
+    display:none;
+  }
+
+  .site-header{
+    padding:1rem;
+  }
+
+  .section,
+  .tracker-section{
+    padding:4rem 1rem;
+  }
+
+  .feedback-float{
+    width:calc(100% - 24px);
+    right:12px;
+  }
+
+  .sightings-number{
+    font-size:3.5rem;
+  }
+
+}
