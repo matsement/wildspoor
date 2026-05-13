@@ -5,24 +5,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wildspoor — Meedoen</title>
-<script src="js/app.js"></script>
+  <script src="js/app.js"></script>
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
+<!-- Forest layers -->
+<div id="forest-scatter"></div>
+<div id="forest-canopy"></div>
+
+<!-- ══ FEEDBACK BANNER ═════════════════════════════════ -->
 <div class="proto-banner">
   <span data-lang="nl">
-    🌿 Wildspoor is momenteel een prototype.
+    🌿 Wildspoor is momenteel een prototype. Deel je gedachten!
   </span>
-
   <span data-lang="en">
-    🌿 Wildspoor is currently a prototype.
+    🌿 Wildspoor is currently a prototype. Share your thoughts!
   </span>
 </div>
 
+<!-- ══ HEADER ══════════════════════════════════════════ -->
 <header class="site-header">
-
   <a href="index.html" class="logo-wrap">
     <div class="logo-icon">🌿</div>
     <span class="logo-name">
@@ -32,57 +36,56 @@
 
   <nav>
     <ul class="nav-links">
-      <li><a href="index.html">Concept</a></li>
-      <li><a href="kever.html">Insecten</a></li>
+      <li><a href="index.html" data-lang="nl">Concept</a><a href="index.html" data-lang="en">Concept</a></li>
+      <li><a href="kever.html" data-lang="nl">Insecten</a><a href="kever.html" data-lang="en">Insects</a></li>
     </ul>
   </nav>
 
   <button class="lang-toggle">EN</button>
-
 </header>
 
+<!-- ══ INTRO ════════════════════════════════════════════ -->
 <section class="section" style="padding-top:10rem">
-
-  <span class="eyebrow">
+  <span class="eyebrow" data-lang="nl">
     Voor gemeenten · buurten · parken
+  </span>
+  <span class="eyebrow" data-lang="en">
+    For municipalities · neighbourhoods · parks
   </span>
 
   <h1 data-lang="nl">
     Laat mensen hun wilde natuur ontdekken
   </h1>
-
   <h1 data-lang="en">
-    Help people discover urban wild nature
+    Help people discover wild nature around them
   </h1>
 
   <div class="divider"></div>
 
   <p style="max-width:760px;margin-top:2rem;font-size:1.1rem">
-
     <span data-lang="nl">
-      Wildspoor helpt bewoners om wilde natuur in de stad te begrijpen, waarderen en beschermen. Door interactieve routes, QR-codes en speurtochten ontdekken bezoekers waarom verwilderde plekken juist waardevol zijn.
+      Wildspoor helpt bewoners om wilde insecten in hun buurt te begrijpen, waarderen en beschermen. Door interactieve speurtochten, QR-codes en waarnemingsplatforms ontdekken bezoekers waarom verwilderde plekken cruciaal zijn voor biodiversiteit — en hoe zij eraan kunnen bijdragen.
     </span>
-
     <span data-lang="en">
-      Wildspoor helps residents understand, appreciate and protect urban wild nature. Through interactive routes, QR codes and discovery trails, visitors learn why rewilded spaces are valuable.
+      Wildspoor helps residents understand, appreciate and protect wild insects in their area. Through interactive treasure hunts, QR codes and observation platforms, visitors discover why rewilded spaces are crucial for biodiversity — and how they can help.
     </span>
-
   </p>
-
 </section>
 
 <div class="vine-divider"></div>
 
+<!-- ══ HOW IT WORKS ═════════════════════════════════════ -->
 <section class="section">
-
-  <span class="eyebrow">
+  <span class="eyebrow" data-lang="nl">
     Hoe werkt het
+  </span>
+  <span class="eyebrow" data-lang="en">
+    How it works
   </span>
 
   <h2 data-lang="nl">
     Van vergeten hoekje naar levende plek
   </h2>
-
   <h2 data-lang="en">
     From forgotten corner to living place
   </h2>
@@ -90,41 +93,40 @@
   <div class="divider"></div>
 
   <div class="insect-cards-row mt-4">
-
-    <div class="insect-tracker-card"
-      style="background:linear-gradient(135deg,#566b2f,#7f9b45)">
+    <div class="insect-tracker-card" style="background:linear-gradient(135deg,#566b2f,#7f9b45)">
       <div class="tracker-insect-img">🪧</div>
-      <div class="tracker-name">1. Bord plaatsen</div>
+      <div class="tracker-name" data-lang="nl">1. Bord plaatsen</div>
+      <div class="tracker-name" data-lang="en">1. Place a sign</div>
     </div>
 
-    <div class="insect-tracker-card"
-      style="background:linear-gradient(135deg,#3f3328,#566b2f)">
+    <div class="insect-tracker-card" style="background:linear-gradient(135deg,#3f3328,#566b2f)">
       <div class="tracker-insect-img">📱</div>
-      <div class="tracker-name">2. QR koppelen</div>
+      <div class="tracker-name" data-lang="nl">2. QR-codes koppelen</div>
+      <div class="tracker-name" data-lang="en">2. Connect QR codes</div>
     </div>
 
-    <div class="insect-tracker-card"
-      style="background:linear-gradient(135deg,#1c1a16,#566b2f)">
+    <div class="insect-tracker-card" style="background:linear-gradient(135deg,#1c1a16,#566b2f)">
       <div class="tracker-insect-img">🌿</div>
-      <div class="tracker-name">3. Mensen laten ontdekken</div>
+      <div class="tracker-name" data-lang="nl">3. Mensen laten ontdekken</div>
+      <div class="tracker-name" data-lang="en">3. Let people explore</div>
     </div>
-
   </div>
-
 </section>
 
 <div class="vine-divider"></div>
 
+<!-- ══ WHY IT WORKS ══════════════════════════════════════ -->
 <section class="section">
-
-  <span class="eyebrow">
+  <span class="eyebrow" data-lang="nl">
     Waarom dit werkt
+  </span>
+  <span class="eyebrow" data-lang="en">
+    Why it works
   </span>
 
   <h2 data-lang="nl">
     Mensen beschermen wat ze begrijpen
   </h2>
-
   <h2 data-lang="en">
     People protect what they understand
   </h2>
@@ -135,13 +137,15 @@
     <button class="accordion-trigger">
       <div class="accordion-icon">🌱</div>
       <div>
-        <strong>Meer draagvlak voor rewilding</strong>
+        <strong data-lang="nl">Meer draagvlak voor rewilding</strong>
+        <strong data-lang="en">More support for rewilding</strong>
       </div>
       <span class="accordion-arrow">▼</span>
     </button>
 
     <div class="accordion-body">
-      Verwilderde plekken worden vaak gezien als slecht onderhouden. Wildspoor laat zien dat ze juist cruciaal zijn voor biodiversiteit.
+      <span data-lang="nl">Verwilderde plekken worden vaak gezien als slecht onderhouden. Wildspoor laat zien dat ze juist cruciaal zijn voor biodiversiteit en stadsgroen.</span>
+      <span data-lang="en">Rewilded spaces are often seen as poorly maintained. Wildspoor shows they're actually crucial for biodiversity and urban green.</span>
     </div>
   </div>
 
@@ -149,13 +153,15 @@
     <button class="accordion-trigger">
       <div class="accordion-icon">🏙️</div>
       <div>
-        <strong>Meer betrokken bewoners</strong>
+        <strong data-lang="nl">Meer betrokken bewoners</strong>
+        <strong data-lang="en">More engaged residents</strong>
       </div>
       <span class="accordion-arrow">▼</span>
     </button>
 
     <div class="accordion-body">
-      Bewoners gaan actief zoeken, observeren en foto's delen. Dat creëert verbondenheid met de plek.
+      <span data-lang="nl">Bewoners gaan actief zoeken, observeren en foto's delen. Dat creëert sterke verbondenheid met hun buurt.</span>
+      <span data-lang="en">Residents actively search, observe and share photos. This creates strong connection with their neighbourhood.</span>
     </div>
   </div>
 
@@ -163,47 +169,55 @@
     <button class="accordion-trigger">
       <div class="accordion-icon">📚</div>
       <div>
-        <strong>Educatie zonder saai te worden</strong>
+        <strong data-lang="nl">Educatie die plezier geeft</strong>
+        <strong data-lang="en">Education that's fun</strong>
       </div>
       <span class="accordion-arrow">▼</span>
     </button>
 
     <div class="accordion-body">
-      Geen lange informatieborden, maar interactieve ontdekking en speurtochten.
+      <span data-lang="nl">Geen lange informatieborden, maar interactieve speurtochten, ontdekkingen en visuele verhalen over insecten en ecosystemen.</span>
+      <span data-lang="en">No long information boards, but interactive hunts, discoveries and visual stories about insects and ecosystems.</span>
     </div>
   </div>
-
 </section>
 
 <div class="vine-divider"></div>
 
+<!-- ══ CONTACT / FORM ════════════════════════════════════ -->
 <section class="feedback-section">
-
   <div class="feedback-inner">
-
-    <span class="eyebrow">
-      Contact
+    <span class="eyebrow" data-lang="nl">
+      Jij bent volgende
+    </span>
+    <span class="eyebrow" data-lang="en">
+      You're next
     </span>
 
-    <h2>
+    <h2 data-lang="nl">
       Wildspoor voor jouw locatie?
     </h2>
+    <h2 data-lang="en">
+      Wildspoor for your location?
+    </h2>
 
-    <p style="margin-top:1rem;opacity:0.7">
-      Voeg hier later je contactformulier, e-mail of Microsoft Form toe.
+    <p style="margin-top:1rem;opacity:0.7" data-lang="nl">
+      Ben je geïnteresseerd in Wildspoor voor een park, buurt of gemeente? Vul je contactgegevens hieronder in of stuur een e-mail naar contact@wildspoor.nl.
+    </p>
+    <p style="margin-top:1rem;opacity:0.7" data-lang="en">
+      Interested in Wildspoor for a park, neighbourhood or municipality? Fill in your details below or email contact@wildspoor.nl.
     </p>
 
     <div class="feedback-iframe-wrap">
-
-      <iframe
-        src="https://matsvandeijck.com/kever/#feedback-english">
-      </iframe>
-
+      <iframe src="https://forms.microsoft.com/Pages/ResponsePage.aspx?id=..." title="Contactformulier" style="border:none;width:100%;min-height:600px"></iframe>
     </div>
-
   </div>
-
 </section>
+
+<!-- ══ FOOTER ═══════════════════════════════════════════ -->
+<footer class="site-footer">
+  <p>Wildspoor · 2026 · <a href="index.html" data-lang="nl">Concept</a><a href="index.html" data-lang="en">Concept</a> · <a href="kever.html" data-lang="nl">Insecten ontdekken</a><a href="kever.html" data-lang="en">Discover insects</a></p>
+</footer>
 
 <script src="js/app.js"></script>
 
