@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Citroenvlinder gevonden! — Wildspoor</title>
   <link rel="stylesheet" href="css/style.css">
-<script src="js/app.js"></script>
+  <script src="js/app.js"></script>
   <style>
     .insect-hero {
       min-height: 100vh;
@@ -90,11 +90,17 @@
 </head>
 <body>
 
+<!-- Forest layers -->
+<div id="forest-scatter"></div>
+<div id="forest-canopy"></div>
+
+<!-- ══ FEEDBACK BANNER (under header) ═════════════════ -->
 <div class="proto-banner">
-  <span data-lang="nl">⚠️ Deze pagina is een prototype en wordt getest. Geef gerust je <a href="https://matsvandeijck.com/kever/#feedback-english" target="_blank">feedback</a>.</span>
-  <span data-lang="en">⚠️ This page is a prototype and is being tested. Please share your <a href="https://matsvandeijck.com/kever/#feedback-english" target="_blank">feedback</a>.</span>
+  <span data-lang="nl">⚠️ Deze pagina is in prototype. Geef je <a href="#feedback" style="color:var(--lichen)">feedback</a>.</span>
+  <span data-lang="en">⚠️ This page is a prototype. Share your <a href="#feedback" style="color:var(--lichen)">feedback</a>.</span>
 </div>
 
+<!-- ══ HEADER ══════════════════════════════════════════ -->
 <header class="site-header">
   <a href="index.html" class="logo-wrap">
     <div class="logo-icon">🌿</div>
@@ -112,28 +118,27 @@
 <!-- ══ CELEBRATION HERO ═════════════════════════════════ -->
 <section class="insect-hero">
   <div style="position:relative;z-index:1;width:100%;max-width:600px">
-
-    <div class="found-badge" style="background:#8a7a10">
-      <span>✨</span>
+    
+    <div class="found-badge" style="background:#c8a010">
+      <span>🎉</span>
       <span data-lang="nl">Gevonden!</span>
       <span data-lang="en">Found it!</span>
     </div>
 
     <div class="insect-hero-image">
-      <!-- Replace src with your 3D model render. Use a transparent PNG. -->
       <img src="images/citroenvlinder.png" alt="Citroenvlinder" onerror="this.outerHTML='<div style=&quot;font-size:6rem&quot;>🦋</div>'">
     </div>
 
     <h1 class="celebration-title">
       <span data-lang="nl">Je hebt de citroenvlinder gevonden!</span>
-      <span data-lang="en">You found the brimstone!</span>
+      <span data-lang="en">You found the brimstone butterfly!</span>
     </h1>
     <p class="celebration-sub">
-      <span data-lang="nl">Eén van de meest bijzondere vlinders van Nederland — en jij zag hem.</span>
-      <span data-lang="en">One of the most remarkable butterflies in the Netherlands — and you found it.</span>
+      <span data-lang="nl">Wat een schoonheid — dit is één van de eerste vlinders van het jaar.</span>
+      <span data-lang="en">What a beauty — this is one of the first butterflies of the year.</span>
     </p>
 
-    <div class="location-chip" style="background:#fffbc0;color:#7a6010;border-color:#c8a010">
+    <div class="location-chip">
       📍 Spoorpark, Tilburg
     </div>
 
@@ -146,12 +151,12 @@
 <section class="info-section">
 
   <div class="location-callout">
-    <div class="location-callout-icon">🌸</div>
+    <div class="location-callout-icon">🌿</div>
     <div>
-      <h3 data-lang="nl">Bij de vleugeltjesbloem</h3>
-      <h3 data-lang="en">By the milkwort</h3>
-      <p data-lang="nl">Je vond de citroenvlinder bij de bloeiende vleugeltjesbloem (Polygala) in het zuidelijke deel van het Spoorpark. Dit is zijn favoriete nectarbron én eilegplek.</p>
-      <p data-lang="en">You found the brimstone butterfly near the flowering milkwort (Polygala) in the southern part of Spoorpark. This is its favourite nectar source and egg-laying spot.</p>
+      <h3 data-lang="nl">In de kruidenrand</h3>
+      <h3 data-lang="en">In the herb strip</h3>
+      <p data-lang="nl">Je vond deze vlinder in de kruidenrijke rand van het park, waar brandnetels en melige wegedoorn groeien.</p>
+      <p data-lang="en">You found this butterfly in the herb-rich border of the park, where nettles and buckthorn grow.</p>
     </div>
   </div>
 
@@ -159,16 +164,16 @@
     <span class="season-badge season-lente">🌸 Lente / Spring</span><br>
     <strong data-lang="nl">Lente-update:</strong>
     <strong data-lang="en">Spring update:</strong>
-    <span data-lang="nl"> De citroenvlinder is een van de eerste vlinders die je ziet in het voorjaar — hij overwintert als volwassen vlinder en vliegt al bij de eerste zonnige dagen. Let goed op de vleugeltjesbloem: als hij bloeit, is de vlinder dichtbij.</span>
-    <span data-lang="en"> The brimstone is one of the first butterflies seen in spring — it overwinters as an adult and flies at the first sunny days. Keep an eye on the milkwort: when it blooms, the butterfly is nearby.</span>
+    <span data-lang="nl"> Dit is de moment waar ze naar uit hebben gekeken. De citroenvlinder is één van de eerste vlinders in het voorjaar. Na de winter kruipen ze tevoorschijn.</span>
+    <span data-lang="en"> This is what they've been waiting for. The brimstone is one of the first butterflies in spring. After winter, they emerge.</span>
   </div>
 
   <div class="fact-chips">
     <span class="tag">🦋 Gonepteryx rhamni</span>
-    <span class="tag">🌸 Vleugeltjesbloem</span>
-    <span class="tag">❄️ Overwinteraar</span>
-    <span class="tag">☀️ Zonneminnar</span>
-    <span class="tag">📏 60–74mm span</span>
+    <span class="tag">💛 Citroengeel</span>
+    <span class="tag">🌱 Plant-afhankelijk</span>
+    <span class="tag">📏 30–32mm</span>
+    <span class="tag">⏱️ Lang leven</span>
   </div>
 
   <span class="eyebrow" data-lang="nl">Klik en ontdek</span>
@@ -178,20 +183,20 @@
 
   <div class="accordion-item open">
     <button class="accordion-trigger">
-      <div class="accordion-icon">🌸</div>
+      <div class="accordion-icon">🌿</div>
       <div>
-        <div data-lang="nl"><strong>De vleugeltjesbloem als thuis</strong></div>
-        <div data-lang="en"><strong>The milkwort as home</strong></div>
-        <div style="font-size:0.82rem;color:var(--text-soft)" data-lang="nl">Waarom precies deze plant?</div>
-        <div style="font-size:0.82rem;color:var(--text-soft)" data-lang="en">Why exactly this plant?</div>
+        <div data-lang="nl"><strong>Waarom je alleen meidoorn en brandnetels ziet</strong></div>
+        <div data-lang="en"><strong>Why you only see buckthorn and nettles</strong></div>
+        <div style="font-size:0.82rem;color:var(--text-soft)" data-lang="nl">Het zijn geen onkruiden — het zijn gastheerplanten</div>
+        <div style="font-size:0.82rem;color:var(--text-soft)" data-lang="en">They're not weeds — they're host plants</div>
       </div>
       <span class="accordion-arrow">▼</span>
     </button>
     <div class="accordion-body">
-      <p data-lang="nl">De citroenvlinder is nauw verbonden met de vleugeltjesbloem (Polygala vulgaris) en Wegedoorn (Rhamnus). Het vrouwtje legt haar eitjes bijna uitsluitend op de blaadjes van deze planten. De rupsen eten niets anders. Zonder deze plant: geen citroenvlinder.</p>
-      <p data-lang="en">The brimstone butterfly is closely tied to milkwort (Polygala vulgaris) and buckthorn (Rhamnus). The female lays her eggs almost exclusively on the leaves of these plants. The caterpillars eat nothing else. No plant: no brimstone.</p>
-      <p data-lang="nl">In het Spoorpark groeit de vleugeltjesbloem op een zonnige, half-open plek — exact de omstandigheid die ze allebei nodig hebben.</p>
-      <p data-lang="en">In Spoorpark, the milkwort grows in a sunny, semi-open spot — exactly the condition both plant and butterfly need.</p>
+      <p data-lang="nl">Citroenvlinders hebben heel bijzondere voorkeur. De rupsen eten alleen van meidoorn en brandnetels. Dit zijn dus van levensbelang.</p>
+      <p data-lang="en">Brimstone butterflies have very specific preferences. The caterpillars only eat buckthorn and nettles. These are therefore essential.</p>
+      <p data-lang="nl">Als je een plant weg kunt halen, kan je een hele vlinder uitroeien. Daarom laten veel natuur-parken deze niet verwijderen.</p>
+      <p data-lang="en">If you remove the plant, you can eliminate the entire butterfly. That's why many natural parks don't remove them.</p>
     </div>
   </div>
 
@@ -199,94 +204,83 @@
     <button class="accordion-trigger">
       <div class="accordion-icon">❄️</div>
       <div>
-        <div data-lang="nl"><strong>De langst levende vlinder van Nederland</strong></div>
-        <div data-lang="en"><strong>The longest-lived butterfly in the Netherlands</strong></div>
-        <div style="font-size:0.82rem;color:var(--text-soft)" data-lang="nl">Tot 13 maanden oud — als vlinder!</div>
-        <div style="font-size:0.82rem;color:var(--text-soft)" data-lang="en">Up to 13 months old — as a butterfly!</div>
+        <div data-lang="nl"><strong>De geheime superpower van citroenvlinders</strong></div>
+        <div data-lang="en"><strong>The secret superpower of brimstones</strong></div>
+        <div style="font-size:0.82rem;color:var(--text-soft)" data-lang="nl">Ze lijken op blaadjes</div>
+        <div style="font-size:0.82rem;color:var(--text-soft)" data-lang="en">They look like leaves</div>
       </div>
       <span class="accordion-arrow">▼</span>
     </button>
     <div class="accordion-body">
-      <p data-lang="nl">De citroenvlinder leeft langer dan enige andere vlinder in Nederland: tot 13 maanden als volwassen vlinder. Hij overwintert als imago (volwassen vlinder) verscholen in klimop of struiken. In de winter lijkt hij een geel blaadje — perfecte camouflage.</p>
-      <p data-lang="en">The brimstone lives longer than any other butterfly in the Netherlands: up to 13 months as an adult. It overwinters as an adult butterfly hidden in ivy or shrubs. In winter it resembles a yellow leaf — perfect camouflage.</p>
-      <p data-lang="nl">Als jij hem in maart ziet fladderen, was hij er al vóór de winter. Bijzonder.</p>
-      <p data-lang="en">If you see one flutter in March, it was there before winter. Remarkable.</p>
+      <p data-lang="nl">De citroenvlinder kan jaren ouder worden dan andere vlinders — soms wel 10 maanden. Dit doen ze door in de winter in een slaapachtige staat te gaan, verstopt in bladeren.</p>
+      <p data-lang="en">The brimstone butterfly can live many months longer than other butterflies — sometimes up to 10 months. They do this by entering a hibernation-like state in winter, hidden among leaves.</p>
+      <p data-lang="nl">Met gesloten vleugels ziet je een citroenvlinder er uit als een groen blaadje. Perfecte camouflage!</p>
+      <p data-lang="en">With closed wings, a brimstone looks like a green leaf. Perfect camouflage!</p>
     </div>
   </div>
 
   <div class="accordion-item">
     <button class="accordion-trigger">
-      <div class="accordion-icon">🌍</div>
+      <div class="accordion-icon">🌼</div>
       <div>
-        <div data-lang="nl"><strong>Wat doet hij voor het ecosysteem?</strong></div>
-        <div data-lang="en"><strong>What does it do for the ecosystem?</strong></div>
-        <div style="font-size:0.82rem;color:var(--text-soft)" data-lang="nl">Bestuiver, prooi én indicator</div>
-        <div style="font-size:0.82rem;color:var(--text-soft)" data-lang="en">Pollinator, prey, and indicator</div>
+        <div data-lang="nl"><strong>Waarom citroenen geel zijn</strong></div>
+        <div data-lang="en"><strong>Why they're called brimstone</strong></div>
+        <div style="font-size:0.82rem;color:var(--text-soft)" data-lang="nl">Het is geen toeval</div>
+        <div style="font-size:0.82rem;color:var(--text-soft)" data-lang="en">It's not a coincidence</div>
       </div>
       <span class="accordion-arrow">▼</span>
     </button>
     <div class="accordion-body">
-      <p data-lang="nl">Als een van de eerste vlinders van het jaar bestrijkt de citroenvlinder vroege bloemen — op een moment dat bijen nog schaars zijn. Hij is een vroege bestuiver die planten helpt reproduceren voordat de zomer begint.</p>
-      <p data-lang="en">As one of the first butterflies of the year, the brimstone visits early flowers — at a time when bees are still scarce. It's an early pollinator that helps plants reproduce before summer begins.</p>
-      <p data-lang="nl">Bovendien is hij een goede indicator van de gezondheid van het ecosysteem: als de vleugeltjesbloem bloeit en de struiken onbeheerd blijven, is de citroenvlinder er.</p>
-      <p data-lang="en">It's also a strong indicator of ecosystem health: if the milkwort blooms and shrubs are left unmanaged, the brimstone will be there.</p>
-    </div>
-  </div>
-
-  <div class="accordion-item">
-    <button class="accordion-trigger">
-      <div class="accordion-icon">🎨</div>
-      <div>
-        <div data-lang="nl"><strong>Waarom is het mannetje geel?</strong></div>
-        <div data-lang="en"><strong>Why is the male yellow?</strong></div>
-        <div style="font-size:0.82rem;color:var(--text-soft)" data-lang="nl">En waarom is het vrouwtje wit?</div>
-        <div style="font-size:0.82rem;color:var(--text-soft)" data-lang="en">And why is the female white?</div>
-      </div>
-      <span class="accordion-arrow">▼</span>
-    </button>
-    <div class="accordion-body">
-      <p data-lang="nl">Het mannetje is citroengeel — het vrouwtje bijna wit-groenig. Dit verschil is evolutionair: het vrouwtje moet onzichtbaar zijn terwijl ze eitjes legt; het mannetje wil juist opvallen voor andere wijfjes. De kleur komt van pigmenten die ze zelf aanmaken uit hun voedsel.</p>
-      <p data-lang="en">The male is lemon yellow — the female almost white-greenish. This difference is evolutionary: the female needs to be invisible while laying eggs; the male wants to stand out for females. The colour comes from pigments they produce themselves from their food.</p>
+      <p data-lang="nl">De fluorescentgele kleur van deze vlinder is een waarschuwing: ik ben giftig voor vogels. Ze hebben dat geleerd.</p>
+      <p data-lang="en">The fluorescent yellow color of this butterfly is a warning: I'm toxic to birds. They've learned this.</p>
+      <p data-lang="nl">Tegenwoordig zien we meer citroenvlinders in de stad — ze wijken uit naar urbaan groen omdat hun natuurlijke habitat verdwijnt.</p>
+      <p data-lang="en">These days we see more brimstones in cities — they're moving to urban green spaces as their natural habitats disappear.</p>
     </div>
   </div>
 
   <div class="did-you-know mt-4">
     <div class="dyk-label" data-lang="nl">Wist je dat...</div>
     <div class="dyk-label" data-lang="en">Did you know...</div>
-    <p data-lang="nl">Het woord "butterfly" in het Engels mogelijk is afgeleid van de citroenvlinder? De vroegste vlinder die in Engeland verschijnt in de lente is de brimstone — een gele, botergele vlinder. "Butter-fly." Toeval? Waarschijnlijk niet.</p>
-    <p data-lang="en">The word "butterfly" in English may actually be derived from the brimstone? The earliest butterfly seen in England each spring is the brimstone — a yellow, butter-coloured butterfly. "Butter-fly." Coincidence? Probably not.</p>
+    <p data-lang="nl">De citroenvlinder één van de langstlevende vlinders in Europa is? Terwijl meeste vlinders slechts enkele weken leven, kan deze vlinder tot 10 maanden oud worden.</p>
+    <p data-lang="en">The brimstone is one of the longest-living butterflies in Europe? While most butterflies live only a few weeks, this one can reach 10 months old.</p>
   </div>
 
   <h3 class="mt-4 mb-2" data-lang="nl">Foto's van de plek</h3>
   <h3 class="mt-4 mb-2" data-lang="en">Photos of the spot</h3>
   <div class="photo-grid">
-    <div class="photo-slot"><div class="photo-placeholder"><span>🌸</span><span data-lang="nl">foto binnenkort</span><span data-lang="en">photo coming</span></div></div>
-    <div class="photo-slot"><div class="photo-placeholder"><span>🦋</span><span data-lang="nl">foto binnenkort</span><span data-lang="en">photo coming</span></div></div>
-    <div class="photo-slot"><div class="photo-placeholder"><span>🌿</span><span data-lang="nl">foto binnenkort</span><span data-lang="en">photo coming</span></div></div>
+    <div class="photo-slot">
+      <div class="photo-placeholder"><span>🌼</span><span data-lang="nl">foto binnenkort</span><span data-lang="en">photo coming</span></div>
+    </div>
+    <div class="photo-slot">
+      <div class="photo-placeholder"><span>🌿</span><span data-lang="nl">foto binnenkort</span><span data-lang="en">photo coming</span></div>
+    </div>
+    <div class="photo-slot">
+      <div class="photo-placeholder"><span>🦋</span><span data-lang="nl">foto binnenkort</span><span data-lang="en">photo coming</span></div>
+    </div>
   </div>
-  <p style="font-size:0.8rem;color:var(--text-soft);margin-top:0.5rem;font-family:var(--font-mono)" data-lang="nl">📸 Foto's worden regelmatig bijgewerkt per seizoen.</p>
-  <p style="font-size:0.8rem;color:var(--text-soft);margin-top:0.5rem;font-family:var(--font-mono)" data-lang="en">📸 Photos are updated regularly each season.</p>
 
 </section>
 
 <div class="vine-divider"></div>
 
-<!-- ══ SIGHTINGS ═════════════════════════════════════════ -->
+<!-- ══ SIGHTINGS COUNTER ═════════════════════════════════ -->
 <section class="section">
   <span class="eyebrow" data-lang="nl">Buurtregistratie</span>
   <span class="eyebrow" data-lang="en">Neighbourhood sightings</span>
   <h2 data-lang="nl">Hoe veel citroenvlinders zijn er al gezien?</h2>
   <h2 data-lang="en">How many brimstones have been spotted?</h2>
   <div class="divider"></div>
+
   <div class="sightings-block mt-4">
-    <div class="sightings-number" id="total-sightings">31</div>
+    <div class="sightings-number" id="total-sightings">72</div>
     <div class="sightings-label" data-lang="nl">Keer waargenomen door buurters</div>
     <div class="sightings-label" data-lang="en">Times spotted by neighbours</div>
-    <div class="sightings-subtext" data-lang="nl">Jij hebt er <strong id="my-sighting-count" style="color:#d4c840">0</strong> keer een gezien.</div>
-    <div class="sightings-subtext" data-lang="en">You've spotted <strong id="my-sighting-count-en" style="color:#d4c840">0</strong> time(s).</div>
+    <div class="sightings-subtext" data-lang="nl">Jij hebt er nu ook eentje gezien!</div>
+    <div class="sightings-subtext" data-lang="en">You've now spotted one too!</div>
+
     <div style="position:relative;z-index:1">
-      <p style="color:rgba(248,244,232,0.55);font-size:0.82rem;margin:1.25rem 0 0.5rem" data-lang="nl">Heb je er vandaag ook een gezien?</p>
-      <p style="color:rgba(248,244,232,0.55);font-size:0.82rem;margin:1.25rem 0 0.5rem" data-lang="en">Did you spot one today?</p>
+      <p style="color:rgba(248,244,232,0.55);font-size:0.82rem;margin:1.25rem 0 0.5rem" data-lang="nl">Heb je nog meer gezien vandaag?</p>
+      <p style="color:rgba(248,244,232,0.55);font-size:0.82rem;margin:1.25rem 0 0.5rem" data-lang="en">Spotted more today?</p>
       <div class="counter-input-wrap">
         <button class="counter-btn" id="counter-minus">−</button>
         <input class="counter-input" id="counter-input" type="number" value="1" min="0" max="99">
@@ -299,11 +293,11 @@
 
   <h3 class="mt-4 mb-2" data-lang="nl">📷 Deel jouw foto</h3>
   <h3 class="mt-4 mb-2" data-lang="en">📷 Share your photo</h3>
-  <p style="color:var(--text-mid);margin-bottom:1rem;font-size:0.9rem" data-lang="nl">Foto gemaakt? Voeg hem hieronder toe.</p>
-  <p style="color:var(--text-mid);margin-bottom:1rem;font-size:0.9rem" data-lang="en">Took a photo? Add it below.</p>
+  <p style="color:var(--text-mid);margin-bottom:1rem;font-size:0.9rem" data-lang="nl">Heb je een mooie foto? Voeg hem hieronder toe.</p>
+  <p style="color:var(--text-mid);margin-bottom:1rem;font-size:0.9rem" data-lang="en">Did you get a nice shot? Add it below.</p>
   <div class="upload-area" id="upload-area">
     <input type="file" id="photo-input" accept="image/*" multiple>
-    <div class="upload-icon">🦋</div>
+    <div class="upload-icon">🌼</div>
     <div class="upload-text" data-lang="nl"><strong>Klik of sleep</strong> je foto hierheen</div>
     <div class="upload-text" data-lang="en"><strong>Click or drag</strong> your photo here</div>
   </div>
@@ -312,26 +306,29 @@
 
 <div class="vine-divider"></div>
 
-<!-- ══ TRACKER ═══════════════════════════════════════════ -->
+<!-- ══ INSECT TRACKER ════════════════════════════════════ -->
 <section class="tracker-section">
   <span class="eyebrow" data-lang="nl">Jouw speurtocht</span>
   <span class="eyebrow" data-lang="en">Your search</span>
   <h2 class="tracker-title" data-lang="nl">Hoe ver ben jij?</h2>
   <h2 class="tracker-title" data-lang="en">How far are you?</h2>
-  <p class="tracker-subtitle" id="tracker-progress-text"></p>
+  <p class="tracker-subtitle" id="tracker-progress-text" data-lang="nl">Je hebt 2 van de 3 gevonden. Nog 1 te gaan!</p>
+
   <div class="found-progress-wrap">
     <div class="found-progress-bar" id="found-progress-bar" style="width:0%"></div>
   </div>
-  <div class="insect-cards-row mt-4" id="insect-tracker"></div>
+
+  <div class="insect-cards-row mt-4" id="insect-tracker">
+  </div>
 </section>
 
-<!-- ══ FEEDBACK ══════════════════════════════════════════ -->
+<!-- ══ FEEDBACK ════════════════════════════════════════ -->
 <div class="feedback-float" id="feedback-float">
   <button class="feedback-float-close" id="feedback-float-close">✕</button>
   <div class="feedback-float-title" data-lang="nl">💬 Wat vind je ervan?</div>
   <div class="feedback-float-title" data-lang="en">💬 What do you think?</div>
-  <p style="font-size:0.82rem;color:rgba(255,255,255,0.75);margin:0.4rem 0" data-lang="nl">Dit is een prototype. Je feedback helpt!</p>
-  <p style="font-size:0.82rem;color:rgba(255,255,255,0.75);margin:0.4rem 0" data-lang="en">This is a prototype. Your feedback helps!</p>
+  <p style="font-size:0.82rem;color:rgba(255,255,255,0.75);margin:0.4rem 0" data-lang="nl">Dit is een prototype. Je feedback helpt enorm!</p>
+  <p style="font-size:0.82rem;color:rgba(255,255,255,0.75);margin:0.4rem 0" data-lang="en">This is a prototype. Your feedback really helps!</p>
   <a href="#feedback" onclick="document.getElementById('feedback-float').classList.remove('visible')" data-lang="nl">Geef feedback →</a>
   <a href="#feedback" onclick="document.getElementById('feedback-float').classList.remove('visible')" data-lang="en">Give feedback →</a>
 </div>
@@ -342,16 +339,17 @@
     <span class="eyebrow" style="color:var(--leaf)" data-lang="en">You make this better</span>
     <h2 style="color:#d4c840" data-lang="nl">Wat vond je van de citroenvlinder-pagina?</h2>
     <h2 style="color:#d4c840" data-lang="en">What did you think of the brimstone page?</h2>
-    <p style="color:rgba(248,244,232,0.65);margin-top:0.5rem" data-lang="nl">Jouw mening helpt ons het beter te maken.</p>
-    <p style="color:rgba(248,244,232,0.65);margin-top:0.5rem" data-lang="en">Your opinion helps us improve it.</p>
+    <p style="color:rgba(248,244,232,0.65);margin-top:0.5rem" data-lang="nl">Dit project is in ontwikkeling. Jouw mening helpt ons het beter te maken.</p>
+    <p style="color:rgba(248,244,232,0.65);margin-top:0.5rem" data-lang="en">This project is in development. Your opinion helps us improve it.</p>
     <div class="feedback-iframe-wrap">
-      <iframe src="https://matsvandeijck.com/kever/#feedback-english" title="Feedback formulier"></iframe>
+      <iframe src="https://forms.microsoft.com/Pages/ResponsePage.aspx?id=..." title="Feedback formulier"></iframe>
     </div>
   </div>
 </section>
 
+<!-- ══ FOOTER ═══════════════════════════════════════════ -->
 <footer class="site-footer">
-  <p>Wildspoor · Spoorpark Tilburg · <a href="index.html">Terug / Back</a> · <a href="meedoen.html">Meedoen / Join</a></p>
+  <p>Wildspoor · 2026 · <a href="index.html" data-lang="nl">Terug</a><a href="index.html" data-lang="en">Back</a> · <a href="meedoen.html" data-lang="nl">Meedoen</a><a href="meedoen.html" data-lang="en">Join</a></p>
 </footer>
 
 <script src="js/app.js"></script>
