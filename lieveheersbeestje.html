@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lieveheersbeestje gevonden! — Wildspoor</title>
   <link rel="stylesheet" href="css/style.css">
-<script src="js/app.js"></script>
+  <script src="js/app.js"></script>
   <style>
     .insect-hero {
       min-height: 100vh;
@@ -59,11 +59,17 @@
 </head>
 <body>
 
+<!-- Forest layers -->
+<div id="forest-scatter"></div>
+<div id="forest-canopy"></div>
+
+<!-- ══ FEEDBACK BANNER ═════════════════════════════════ -->
 <div class="proto-banner">
-  <span data-lang="nl">⚠️ Deze pagina is een prototype en wordt getest. Geef gerust je <a href="https://matsvandeijck.com/kever/#feedback-english" target="_blank">feedback</a>.</span>
-  <span data-lang="en">⚠️ This page is a prototype and is being tested. Please share your <a href="https://matsvandeijck.com/kever/#feedback-english" target="_blank">feedback</a>.</span>
+  <span data-lang="nl">⚠️ Deze pagina is in prototype. Geef je <a href="#feedback" style="color:var(--lichen)">feedback</a>.</span>
+  <span data-lang="en">⚠️ This page is a prototype. Share your <a href="#feedback" style="color:var(--lichen)">feedback</a>.</span>
 </div>
 
+<!-- ══ HEADER ══════════════════════════════════════════ -->
 <header class="site-header">
   <a href="index.html" class="logo-wrap">
     <div class="logo-icon">🌿</div>
@@ -89,7 +95,6 @@
     </div>
 
     <div class="insect-hero-image">
-      <!-- Replace src with your 3D model render. Use a transparent PNG. -->
       <img src="images/lieveheersbeestje.png" alt="Lieveheersbeestje" onerror="this.outerHTML='<div style=&quot;font-size:6rem&quot;>🐞</div>'">
     </div>
 
@@ -98,7 +103,7 @@
       <span data-lang="en">You found the ladybug!</span>
     </h1>
     <p class="celebration-sub">
-      <span data-lang="nl">Dat stipjespatroon vergeet je niet meer — welkom in de wereld van dit kleine rooddier.</span>
+      <span data-lang="nl">Dat stipjespatroon vergeet je niet meer — welkom in de wereld van dit kleine roofdier.</span>
       <span data-lang="en">Those spots are unforgettable — welcome to the world of this tiny red predator.</span>
     </p>
 
@@ -119,8 +124,8 @@
     <div>
       <h3 data-lang="nl">Bij de bladluiskolonie</h3>
       <h3 data-lang="en">By the aphid colony</h3>
-      <p data-lang="nl">Je vond het lieveheersbeestje bij de bladluiskolonie op de brandnetels en rozenstruiken in het westelijke deel van het Spoorpark. Precies waar het eten is.</p>
-      <p data-lang="en">You found the ladybug near the aphid colony on the nettles and rose bushes in the western part of Spoorpark. Right where the food is.</p>
+      <p data-lang="nl">Je vond het lieveheersbeestje bij de bladluiskolonie op de brandnetels. Precies waar het eten is.</p>
+      <p data-lang="en">You found the ladybug near the aphid colony on the nettles. Right where the food is.</p>
     </div>
   </div>
 
@@ -128,8 +133,8 @@
     <span class="season-badge season-lente">🌸 Lente / Spring</span><br>
     <strong data-lang="nl">Lente-update:</strong>
     <strong data-lang="en">Spring update:</strong>
-    <span data-lang="nl"> De bladluispopulatie explodeert in het voorjaar — en het lieveheersbeestje is er om ze te beheersen. Je ziet ze nu het meest op de jonge scheuten van de brandnetelplanten. Let ook op het oranje legsel: rijen gele eitjes aan de onderkant van een blad.</span>
-    <span data-lang="en"> The aphid population explodes in spring — and the ladybug is there to control it. You'll see them most now on the young shoots of nettle plants. Look also for the orange egg clutches: rows of yellow eggs on the underside of a leaf.</span>
+    <span data-lang="nl"> De bladluispopulatie explodeert in het voorjaar — en het lieveheersbeestje is er om ze te beheersen.</span>
+    <span data-lang="en"> The aphid population explodes in spring — and the ladybug is there to control it.</span>
   </div>
 
   <div class="fact-chips">
@@ -149,18 +154,18 @@
     <button class="accordion-trigger">
       <div class="accordion-icon">🌿</div>
       <div>
-        <div data-lang="nl"><strong>Bladluizen: slecht voor de roos, goed voor de biodiversiteit</strong></div>
-        <div data-lang="en"><strong>Aphids: bad for the rose, good for biodiversity</strong></div>
+        <div data-lang="nl"><strong>Bladluizen: slecht voor roos, goed voor biodiversiteit</strong></div>
+        <div data-lang="en"><strong>Aphids: bad for rose, good for biodiversity</strong></div>
         <div style="font-size:0.82rem;color:var(--text-soft)" data-lang="nl">Waarom we ze niet zomaar moeten wegspuiten</div>
         <div style="font-size:0.82rem;color:var(--text-soft)" data-lang="en">Why we shouldn't just spray them away</div>
       </div>
       <span class="accordion-arrow">▼</span>
     </button>
     <div class="accordion-body">
-      <p data-lang="nl">Bladluizen zijn voor veel tuinders een vloek — maar voor het lieveheersbeestje zijn ze het leven zelf. Eén lieveheersbeestje eet in zijn leven meer dan 5.000 bladluizen. Zonder bladluizen: geen lieveheersbeestje. Zonder lieveheersbeestje: een explosie van bladluizen. De natuur regelt zichzelf — als je haar de kans geeft.</p>
-      <p data-lang="en">Aphids are a curse for many gardeners — but for the ladybug they're life itself. One ladybug eats more than 5,000 aphids in its lifetime. No aphids: no ladybugs. No ladybugs: an explosion of aphids. Nature regulates itself — if you give it the chance.</p>
-      <p data-lang="nl">In het Spoorpark worden geen pesticiden gebruikt. Dat klinkt misschien riskant, maar het resultaat is een gevarieerder, gezonder ecosysteem.</p>
-      <p data-lang="en">In Spoorpark, no pesticides are used. That might sound risky, but the result is a more varied, healthier ecosystem.</p>
+      <p data-lang="nl">Bladluizen zijn voor veel tuinders een vloek — maar voor het lieveheersbeestje zijn ze het leven zelf. Eén lieveheersbeestje eet in zijn leven meer dan 5.000 bladluizen.</p>
+      <p data-lang="en">Aphids are a curse for many gardeners — but for the ladybug they're life itself. One ladybug eats more than 5,000 aphids in its lifetime.</p>
+      <p data-lang="nl">In het park worden geen pesticiden gebruikt. Het resultaat is een gevarieerder, gezonder ecosysteem.</p>
+      <p data-lang="en">In the park, no pesticides are used. The result is a more varied, healthier ecosystem.</p>
     </div>
   </div>
 
@@ -176,10 +181,10 @@
       <span class="accordion-arrow">▼</span>
     </button>
     <div class="accordion-body">
-      <p data-lang="nl">Rood met zwart is in de natuur een duidelijk signaal: pas op, ik ben giftig of smaak vies. Vogels leren dit snel. Als een lieveheersbeestje zich bedreigd voelt, scheid het een bitter, gelig vocht af uit zijn poten — aposematisme noemen biologen dit: kleur als waarschuwing.</p>
-      <p data-lang="en">Red and black is a clear signal in nature: careful, I'm toxic or taste bad. Birds learn this quickly. When a ladybug feels threatened, it secretes a bitter, yellowish fluid from its legs — biologists call this aposematism: colour as a warning.</p>
-      <p data-lang="nl">Het aantal stippen zegt trouwens niets over de leeftijd — maar wél over de soort.</p>
-      <p data-lang="en">The number of spots, by the way, says nothing about age — but does indicate the species.</p>
+      <p data-lang="nl">Rood met zwart is in de natuur een duidelijk signaal: pas op, ik ben giftig of smaak vies. Vogels leren dit snel.</p>
+      <p data-lang="en">Red and black is a clear signal in nature: careful, I'm toxic or taste bad. Birds learn this quickly.</p>
+      <p data-lang="nl">Het aantal stippen zegt niets over de leeftijd — maar wél over de soort.</p>
+      <p data-lang="en">The number of spots says nothing about age — but does indicate the species.</p>
     </div>
   </div>
 
@@ -189,14 +194,14 @@
       <div>
         <div data-lang="nl"><strong>Overwintering: samen warm houden</strong></div>
         <div data-lang="en"><strong>Overwintering: keeping warm together</strong></div>
-        <div style="font-size:0.82rem;color:var(--text-soft)" data-lang="nl">Honderden tegelijk, verstopt in de schors</div>
-        <div style="font-size:0.82rem;color:var(--text-soft)" data-lang="en">Hundreds at a time, hidden in bark</div>
+        <div style="font-size:0.82rem;color:var(--text-soft)" data-lang="nl">Honderden tegelijk in de schors</div>
+        <div style="font-size:0.82rem;color:var(--text-soft)" data-lang="en">Hundreds at a time in bark</div>
       </div>
       <span class="accordion-arrow">▼</span>
     </button>
     <div class="accordion-body">
-      <p data-lang="nl">In de winter kruipen lieveheersbeestjes bijeen in grote groepen — soms honderden tegelijk — verstopt in de bast van oude bomen, onder bladhoop of in spleten van muren. Het Spoorpark biedt al deze schuilplaatsen in overvloed. Precies daarom is het zo'n goede overwinteplaats.</p>
-      <p data-lang="en">In winter, ladybugs huddle together in large groups — sometimes hundreds at a time — hidden in the bark of old trees, under leaf piles, or in cracks in walls. Spoorpark offers all of these hiding spots in abundance. That's exactly why it's such a good overwintering site.</p>
+      <p data-lang="nl">In de winter kruipen lieveheersbeestjes bijeen in grote groepen — soms honderden tegelijk — verstopt in bast of onder bladhoop.</p>
+      <p data-lang="en">In winter, ladybugs huddle together in large groups — sometimes hundreds at a time — hidden in bark or under leaf piles.</p>
     </div>
   </div>
 
@@ -212,16 +217,16 @@
       <span class="accordion-arrow">▼</span>
     </button>
     <div class="accordion-body">
-      <p data-lang="nl">Brandnetels zijn voor meer dan 40 soorten insecten een essentiële plant — als voedselbron, eilegplek of schuilplek. Vlinders zoals de atalanta en kleine vos leven bijna uitsluitend op brandnetels als rups. Lieveheersbeestjes vinden er bladluizen. En mensen? Die kunnen er soep, thee en pesto van maken. Onkruid? Absoluut niet.</p>
-      <p data-lang="en">Nettles are an essential plant for more than 40 insect species — as a food source, egg-laying site, or shelter. Butterflies like the red admiral and small tortoiseshell live almost exclusively on nettles as caterpillars. Ladybugs find aphids there. And people? They can make soup, tea, and pesto from them. A weed? Absolutely not.</p>
+      <p data-lang="nl">Brandnetels zijn voor meer dan 40 insectensoorten essentieel — als voedselbron, eilegplek of schuilplek.</p>
+      <p data-lang="en">Nettles are an essential plant for more than 40 insect species — as a food source, egg-laying site, or shelter.</p>
     </div>
   </div>
 
   <div class="did-you-know mt-4">
     <div class="dyk-label" data-lang="nl">Wist je dat...</div>
     <div class="dyk-label" data-lang="en">Did you know...</div>
-    <p data-lang="nl">Een tuin zonder pesticiden gemiddeld 6 keer meer lieveheersbeestjes heeft dan een tuin mét pesticiden? Zodra je stopt met spuiten, herstelt de populatie zich binnen twee tot drie jaar volledig. Natuur is veerkrachtig — als je haar laat.</p>
-    <p data-lang="en">A garden without pesticides has on average 6 times more ladybugs than a garden with pesticides? Once you stop spraying, the population fully recovers within two to three years. Nature is resilient — if you let it.</p>
+    <p data-lang="nl">Een tuin zonder pesticiden gemiddeld 6 keer meer lieveheersbeestjes heeft dan een tuin mét pesticiden?</p>
+    <p data-lang="en">A garden without pesticides has on average 6 times more ladybugs than a garden with pesticides?</p>
   </div>
 
   <h3 class="mt-4 mb-2" data-lang="nl">Foto's van de plek</h3>
@@ -231,8 +236,6 @@
     <div class="photo-slot"><div class="photo-placeholder"><span>🐞</span><span data-lang="nl">foto binnenkort</span><span data-lang="en">photo coming</span></div></div>
     <div class="photo-slot"><div class="photo-placeholder"><span>🌱</span><span data-lang="nl">foto binnenkort</span><span data-lang="en">photo coming</span></div></div>
   </div>
-  <p style="font-size:0.8rem;color:var(--text-soft);margin-top:0.5rem;font-family:var(--font-mono)" data-lang="nl">📸 Foto's worden regelmatig bijgewerkt per seizoen.</p>
-  <p style="font-size:0.8rem;color:var(--text-soft);margin-top:0.5rem;font-family:var(--font-mono)" data-lang="en">📸 Photos are updated regularly each season.</p>
 
 </section>
 
@@ -312,13 +315,14 @@
     <p style="color:rgba(248,244,232,0.65);margin-top:0.5rem" data-lang="nl">Jouw mening helpt ons het beter te maken.</p>
     <p style="color:rgba(248,244,232,0.65);margin-top:0.5rem" data-lang="en">Your opinion helps us improve it.</p>
     <div class="feedback-iframe-wrap">
-      <iframe src="https://matsvandeijck.com/kever/#feedback-english" title="Feedback formulier"></iframe>
+      <iframe src="https://forms.microsoft.com/Pages/ResponsePage.aspx?id=..." title="Feedback formulier"></iframe>
     </div>
   </div>
 </section>
 
+<!-- ══ FOOTER ═══════════════════════════════════════════ -->
 <footer class="site-footer">
-  <p>Wildspoor · Spoorpark Tilburg · <a href="index.html">Terug / Back</a> · <a href="meedoen.html">Meedoen / Join</a></p>
+  <p>Wildspoor · 2026 · <a href="index.html" data-lang="nl">Terug</a><a href="index.html" data-lang="en">Back</a> · <a href="meedoen.html" data-lang="nl">Meedoen</a><a href="meedoen.html" data-lang="en">Join</a></p>
 </footer>
 
 <script src="js/app.js"></script>
