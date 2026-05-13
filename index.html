@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wildspoor — Ontdek de natuur om je heen</title>
-  <meta name="description" content="Wildspoor nodigt stadsbewooners uit om wilde insecten te ontdekken in hun eigen wijk.">
+  <meta name="description" content="Wildspoor nodigt mensen uit om wilde insecten en natuur in hun buurt te ontdekken door interactieve speurtochten en QR-codes.">
   <link rel="stylesheet" href="css/style.css">
-<script src="js/app.js"></script>
+  <script src="js/app.js"></script>
   <style>
     /* Index-specific */
     .home-hero {
@@ -121,43 +121,55 @@
     .mission-inner h2 { color: var(--lichen); margin-bottom: 1.25rem; }
     .mission-inner p { color: rgba(248,244,232,0.75); font-size: 1.05rem; line-height: 1.8; margin-bottom: 1rem; }
 
-    /* Spoorpark section */
-    .spoorpark-section {
+    /* TU/e Credit section */
+    .tue-credit-section {
       padding: 5rem 1.5rem;
       max-width: 900px;
       margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: center;
+      text-align: center;
     }
-    @media (max-width: 700px) { .spoorpark-section { grid-template-columns: 1fr; } }
-    .spoorpark-map-placeholder {
+    .tue-credit-box {
+      background: rgba(46,82,24,0.08);
+      border: 1px solid rgba(74,124,40,0.25);
       border-radius: var(--radius-lg);
-      background: linear-gradient(135deg, var(--moss), var(--bark));
-      aspect-ratio: 4/3;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      color: white; gap: 0.5rem;
-      font-family: var(--font-mono); font-size: 0.85rem;
-      position: relative; overflow: hidden;
+      padding: 2.5rem;
+      margin-top: 2rem;
     }
-    .spoorpark-map-placeholder::after {
-      content: '🗺️';
-      position: absolute;
-      font-size: 6rem;
-      opacity: 0.08;
-      bottom: -1rem; right: -1rem;
+    .tue-badge {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--lichen);
+      background: rgba(74,124,40,0.15);
+      border: 1px solid rgba(74,124,40,0.3);
+      padding: 0.3rem 0.9rem;
+      border-radius: 100px;
+      margin-bottom: 1rem;
     }
-    .spoorpark-map-icon { font-size: 2.5rem; }
+    .tue-credit-section h3 { font-size: 1.1rem; color: var(--cream); margin-bottom: 0.5rem; }
+    .tue-credit-section p { font-size: 0.88rem; color: rgba(242,234,214,0.65); line-height: 1.7; }
+    .tue-credit-section a { color: var(--lichen); border-bottom: 1px solid rgba(130,168,80,0.4); }
+    .tue-credit-section a:hover { color: var(--morning); }
   </style>
 </head>
 <body>
 
+<!-- Forest layers for immersion -->
+<div id="forest-scatter"></div>
+<div id="forest-canopy"></div>
+
+<!-- ══ FEEDBACK BANNER (under header) ═════════════════ -->
+<div class="proto-banner">
+  <span data-lang="nl">⚠️ Wildspoor is in ontwikkeling. Deel je <a href="#feedback" style="color:var(--lichen)">feedback</a> en help ons verbeteren.</span>
+  <span data-lang="en">⚠️ Wildspoor is in development. Share your <a href="#feedback" style="color:var(--lichen)">feedback</a> and help us improve.</span>
+</div>
+
 <!-- ══ HEADER ══════════════════════════════════════════ -->
 <header class="site-header">
   <a href="index.html" class="logo-wrap">
-    <div class="logo-icon">🌿</div><!-- Replace with <img src="images/logo.png" alt="Wildspoor"> -->
+    <div class="logo-icon">🌿</div>
     <span class="logo-name">Wild<span>spoor</span></span>
   </a>
   <nav>
@@ -172,23 +184,22 @@
 
 <!-- ══ HERO ════════════════════════════════════════════ -->
 <section class="home-hero">
-  <div class="hero-bg-leaves"></div>
-
   <div class="hero-text">
-    <p class="hero-tagline">Spoorpark · Tilburg · 2024</p>
+    <p class="hero-tagline" data-lang="nl">Wildspoor · 2026</p>
+    <p class="hero-tagline" data-lang="en">Wildspoor · 2026</p>
 
     <h1 class="hero-h1" data-lang="nl">
-      Ontdek <em>wilde<br>natuur</em> om<br>je heen
+      Ontdek <em>wilde<br>insecten</em> om<br>je heen
     </h1>
     <h1 class="hero-h1" data-lang="en">
-      Discover <em>wild<br>nature</em> around<br>you
+      Discover <em>wild<br>insects</em> around<br>you
     </h1>
 
     <p class="hero-desc" data-lang="nl">
-      In het Spoorpark in Tilburg leven drie bijzondere insecten. Maar hoe vind je ze? Volg de borden, scan de QR-codes, en leer waarom deze wilde natuur zo waardevol is voor jouw buurt.
+      Wildspoor helpt mensen de kleine wilde dieren in hun buurt te vinden en te begrijpen. Door interactieve speurtochten met QR-codes leer je waarom biodiversiteit in de stad zo belangrijk is.
     </p>
     <p class="hero-desc" data-lang="en">
-      Three special insects live in Spoorpark, Tilburg. But how do you find them? Follow the signs, scan the QR codes, and discover why this wild nature is so valuable for your neighbourhood.
+      Wildspoor helps people discover and understand the small wild creatures in their neighbourhood. Through interactive treasure hunts with QR codes, learn why urban biodiversity matters.
     </p>
 
     <div class="hero-cta">
@@ -240,32 +251,32 @@
         <div style="font-size:2rem">🪧</div>
         <h3 data-lang="nl">Vind het bord</h3>
         <h3 data-lang="en">Find the sign</h3>
-        <p data-lang="nl">In het Spoorpark staat een bord dat je vertelt welke drie insecten er vlakbij wonen — en hoe je de QR-codes scant.</p>
-        <p data-lang="en">A sign in Spoorpark tells you which three insects live nearby — and how to scan the QR codes.</p>
+        <p data-lang="nl">Op een bord in jouw buurt ontdek je welke insecten er vlakbij wonen en hoe je ze kunt vinden.</p>
+        <p data-lang="en">A sign in your neighbourhood tells you which insects live nearby — and how to find them.</p>
       </div>
       <div class="how-step">
         <div class="how-step-num">02</div>
         <div style="font-size:2rem">🔍</div>
         <h3 data-lang="nl">Zoek ze op</h3>
         <h3 data-lang="en">Seek them out</h3>
-        <p data-lang="nl">Elk insect heeft een favoriete plek in het park. Zoek de omschreven plek op — een dode boom, een bloeiende struik, een stapel stenen.</p>
-        <p data-lang="en">Each insect has a favourite spot in the park. Find the described location — a dead log, a flowering shrub, a pile of stones.</p>
+        <p data-lang="nl">Volg de pijlen en beschrijvingen naar hun favoriete plekken in het park of de buurt.</p>
+        <p data-lang="en">Follow the clues to their favourite spots in the park or neighbourhood.</p>
       </div>
       <div class="how-step">
         <div class="how-step-num">03</div>
         <div style="font-size:2rem">📱</div>
         <h3 data-lang="nl">Scan & ontdek</h3>
         <h3 data-lang="en">Scan & discover</h3>
-        <p data-lang="nl">Scan de QR-code bij het insect. Ga naar de pagina, leer waarom dit beestje zo belangrijk is, en voeg jouw waarneming toe.</p>
-        <p data-lang="en">Scan the QR code near the insect. Go to the page, learn why this creature matters, and add your sighting.</p>
+        <p data-lang="nl">Scan de QR-code en leer fascinerende verhalen over het insect en zijn ecosysteem.</p>
+        <p data-lang="en">Scan the QR code and discover fascinating stories about the insect and its ecosystem.</p>
       </div>
       <div class="how-step">
         <div class="how-step-num">04</div>
         <div style="font-size:2rem">🌱</div>
-        <h3 data-lang="nl">Vertel het door</h3>
-        <h3 data-lang="en">Spread the word</h3>
-        <p data-lang="nl">Deel wat je hebt gevonden. Hoe meer mensen meedoen, hoe meer de buurt de wilde natuur gaat waarderen.</p>
-        <p data-lang="en">Share what you found. The more people join, the more the neighbourhood comes to appreciate wild nature.</p>
+        <h3 data-lang="nl">Deel je vondst</h3>
+        <h3 data-lang="en">Share your find</h3>
+        <p data-lang="nl">Voeg je waarneming toe en word onderdeel van een buurtgemeenschap die wilde natuur waardeert.</p>
+        <p data-lang="en">Add your sighting and become part of a community that values wild nature.</p>
       </div>
     </div>
   </div>
@@ -273,58 +284,48 @@
 
 <div class="vine-divider"></div>
 
-<!-- ══ SPOORPARK ════════════════════════════════════════ -->
-<section class="section">
-  <div class="spoorpark-section" style="max-width:900px;margin:0 auto;padding:0">
-    <div>
-      <span class="eyebrow">Spoorpark · Tilburg</span>
-      <h2 data-lang="nl">Een park dat zichzelf opnieuw<br><em style="font-style:italic;color:var(--moss)">uitvindt</em></h2>
-      <h2 data-lang="en">A park that reinvents<br><em style="font-style:italic;color:var(--moss)">itself</em></h2>
-      <div class="divider" style="margin:1rem 0"></div>
-      <p data-lang="nl" style="color:var(--text-mid);line-height:1.75;margin-bottom:1rem">
-        Het Spoorpark in Tilburg is een voormalig spooremplacement dat langzaam wordt teruggegeven aan de natuur. Verwilderde hoeken, oude bomen en nieuwe ecologische zones maken het park tot een groene long voor de stad.
-      </p>
-      <p data-lang="en" style="color:var(--text-mid);line-height:1.75;margin-bottom:1rem">
-        Spoorpark in Tilburg is a former railway yard slowly being returned to nature. Wild corners, old trees and new ecological zones make the park a green lung for the city.
-      </p>
-      <p data-lang="nl" style="color:var(--text-mid);line-height:1.75">
-        Wildspoor maakt de stille bewoners van dit park zichtbaar — voor buurtbewoners die er elke dag doorlopen zonder te weten wat er leeft.
-      </p>
-      <p data-lang="en" style="color:var(--text-mid);line-height:1.75">
-        Wildspoor makes the silent inhabitants of this park visible — for residents who walk through every day without knowing what lives there.
-      </p>
-    </div>
-    <div class="spoorpark-map-placeholder">
-      <div class="spoorpark-map-icon">📍</div>
-      <div>Spoorpark, Tilburg</div>
-      <div style="font-size:0.72rem;opacity:0.6" data-lang="nl">kaart binnenkort beschikbaar</div>
-      <div style="font-size:0.72rem;opacity:0.6" data-lang="en">map coming soon</div>
-    </div>
-  </div>
-</section>
-
 <!-- ══ MISSION ══════════════════════════════════════════ -->
 <section class="mission-section">
   <div class="mission-inner">
-    <span class="eyebrow" style="color:var(--leaf)">Waarom · Why</span>
-    <h2 data-lang="nl">Verwilderd is niet verwaarloosd</h2>
-    <h2 data-lang="en">Rewilded is not neglected</h2>
+    <span class="eyebrow" style="color:var(--leaf)">Het doel</span>
+    <h2 data-lang="nl">Waarom Wildspoor?</h2>
+    <h2 data-lang="en">Why Wildspoor?</h2>
     <p data-lang="nl">
-      Een dode boom, een hoek met brandnetels, een stapel rottend hout — het ziet er misschien rommelig uit, maar voor honderden soorten is het een wereld op zichzelf. Wildspoor wil stedelingen laten zien dat wat ruig lijkt, juist leven is.
+      Veel mensen zien verwilderde plekken in hun stad als onverzorgd — maar voor honderden insectensoorten zijn deze plekken cruciaal. Wildspoor maakt zichtbaar wat er verborgen in je buurt leeft.
     </p>
     <p data-lang="en">
-      A dead tree, a patch of nettles, a pile of rotting wood — it might look messy, but for hundreds of species it's a world of its own. Wildspoor wants to show city dwellers that what looks rough is actually teeming with life.
+      Many people see rewilded spaces in their city as neglected — but for hundreds of insect species, these places are crucial. Wildspoor makes visible what's hidden in your neighbourhood.
     </p>
-    <p data-lang="nl" style="opacity:0.5;font-size:0.85rem;margin-top:1.5rem">
-      Door buurtbewoners te betrekken, groeit de acceptatie van wilde natuur in de stad — en daarmee de biodiversiteit.
+    <p data-lang="nl" style="opacity:0.65;font-size:0.95rem;margin-top:1.5rem">
+      Door kennis te delen en waarneming aan te moedigen, bouwen we draagvlak voor biodiversiteit in stedelijke gebieden — en veranderen we de manier waarop mensen naar hun buurt kijken.
     </p>
-    <p data-lang="en" style="opacity:0.5;font-size:0.85rem;margin-top:1.5rem">
-      By involving residents, acceptance of wild nature in the city grows — and with it, biodiversity.
+    <p data-lang="en" style="opacity:0.65;font-size:0.95rem;margin-top:1.5rem">
+      By sharing knowledge and encouraging observation, we build support for urban biodiversity — and change how people see their neighbourhood.
     </p>
-    <a href="meedoen.html" class="btn btn-primary" style="margin-top:2rem" data-lang="nl">Dit concept voor jouw plek</a>
-    <a href="meedoen.html" class="btn btn-primary" style="margin-top:2rem" data-lang="en">This concept for your space</a>
   </div>
 </section>
+
+<div class="vine-divider"></div>
+
+<!-- ══ TU/e CREDIT ════════════════════════════════════ -->
+<section class="tue-credit-section">
+  <div class="tue-credit-box">
+    <div class="tue-badge">TU/e Bachelor Project</div>
+    <h3 data-lang="nl">Industrial Design Final Project</h3>
+    <h3 data-lang="en">Industrial Design Final Project</h3>
+    <p data-lang="nl">
+      Wildspoor is een afstudeerproject aan de Technische Universiteit Eindhoven, afdeling Industrial Design.
+    </p>
+    <p data-lang="en">
+      Wildspoor is a final bachelor project at Eindhoven University of Technology, Industrial Design department.
+    </p>
+    <p style="margin-top:1rem">
+      Ontworpen door <a href="https://matsvandeijck.com" target="_blank">Mats van Deijck</a>
+    </p>
+  </div>
+</section>
+
+<div class="vine-divider"></div>
 
 <!-- ══ INSECTS CTA ══════════════════════════════════════ -->
 <section class="section" style="text-align:center">
@@ -338,31 +339,46 @@
       <div class="tracker-insect-img"><div style="font-size:4rem;line-height:1">🪲</div></div>
       <div class="tracker-name" data-lang="nl">Kever</div>
       <div class="tracker-name" data-lang="en">Beetle</div>
-      <div class="tracker-status" data-lang="nl">Bij de dode boom →</div>
-      <div class="tracker-status" data-lang="en">By the dead log →</div>
+      <div class="tracker-status" data-lang="nl">Ontdekken →</div>
+      <div class="tracker-status" data-lang="en">Discover →</div>
     </a>
     <a href="citroenvlinder.html" class="insect-tracker-card found" style="background:linear-gradient(135deg,#6a5a10,#9a8a30)">
       <div class="tracker-insect-img"><div style="font-size:4rem;line-height:1">🦋</div></div>
       <div class="tracker-name" data-lang="nl">Citroenvlinder</div>
       <div class="tracker-name" data-lang="en">Brimstone</div>
-      <div class="tracker-status" data-lang="nl">Bij de Vleugeltjesbloem →</div>
-      <div class="tracker-status" data-lang="en">By the milkwort →</div>
+      <div class="tracker-status" data-lang="nl">Ontdekken →</div>
+      <div class="tracker-status" data-lang="en">Discover →</div>
     </a>
     <a href="lieveheersbeestje.html" class="insect-tracker-card found" style="background:linear-gradient(135deg,#6a1010,#9a3030)">
       <div class="tracker-insect-img"><div style="font-size:4rem;line-height:1">🐞</div></div>
       <div class="tracker-name" data-lang="nl">Lieveheersbeestje</div>
       <div class="tracker-name" data-lang="en">Ladybug</div>
-      <div class="tracker-status" data-lang="nl">Bij de bladluiskolonie →</div>
-      <div class="tracker-status" data-lang="en">By the aphid colony →</div>
+      <div class="tracker-status" data-lang="nl">Ontdekken →</div>
+      <div class="tracker-status" data-lang="en">Discover →</div>
     </a>
+  </div>
+</section>
+
+<!-- ══ FEEDBACK ══════════════════════════════════════════ -->
+<section class="feedback-section" id="feedback">
+  <div class="feedback-inner">
+    <span class="eyebrow" style="color:var(--leaf)" data-lang="nl">Jij maakt dit beter</span>
+    <span class="eyebrow" style="color:var(--leaf)" data-lang="en">You make this better</span>
+    <h2 data-lang="nl">Wat vind je van Wildspoor?</h2>
+    <h2 data-lang="en">What do you think of Wildspoor?</h2>
+    <p style="color:rgba(248,244,232,0.65);margin-top:0.5rem" data-lang="nl">Je feedback helpt ons dit concept beter en sterker te maken.</p>
+    <p style="color:rgba(248,244,232,0.65);margin-top:0.5rem" data-lang="en">Your feedback helps us make this concept stronger.</p>
+    <div class="feedback-iframe-wrap">
+      <iframe src="https://forms.microsoft.com/Pages/ResponsePage.aspx?id=..." title="Feedback formulier" style="border:none;width:100%;min-height:600px"></iframe>
+    </div>
   </div>
 </section>
 
 <!-- ══ FOOTER ═══════════════════════════════════════════ -->
 <footer class="site-footer">
-  <p>Wildspoor · Spoorpark Tilburg · 
-    <span data-lang="nl">Een initiatief voor wilde stadnatuur</span>
-    <span data-lang="en">An initiative for urban wild nature</span>
+  <p>Wildspoor · 2026 · 
+    <span data-lang="nl">Een project voor stadsnatuur</span>
+    <span data-lang="en">A project for urban nature</span>
     · <a href="meedoen.html" data-lang="nl">Meedoen</a><a href="meedoen.html" data-lang="en">Join</a>
   </p>
 </footer>
